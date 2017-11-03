@@ -33,7 +33,7 @@
 
 * [Bitrise](https://www.bitrise.io/)
 
-## install
+## How to install
 
 ```
 $ git clone git@github.com:nkws/summary.git
