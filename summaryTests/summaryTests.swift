@@ -2,7 +2,6 @@
 //  summaryTests.swift
 //  summaryTests
 //
-//  Created by 中川 慶悟 on 2017/11/05.
 //  Copyright © 2017年 ArgentVGL. All rights reserved.
 //
 
