@@ -7,7 +7,7 @@
 
 ## App support version
 
-* over iOS8.0
+* over iOS9.0
 
 ## Base Architecure
 
@@ -16,6 +16,7 @@
 ## Package Manager
 
 * [gem](https://www.ruby-lang.org/ja/libraries/)
+  * [How to install](https://rubygems.org/pages/download)
 * [Bundler](http://bundler.io/)
 * [Cocoapods](https://cocoapods.org/)
 
