@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    let loginViewModel: LoginViewModel = LoginViewModel.init()
+    let loginViewModel: LoginViewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +25,15 @@ class LoginViewController: UIViewController {
     }
 
     func validateLogin() {
-        let usernameValid = username.rx.text.orEmpty
+        let usernameValid: Observable = username.rx.text.orEmpty
             .map { $0.count >= minimalUsernameLength }
             .share(replay: 1, scope: .whileConnected)
 
-        let passwordValid = password.rx.text.orEmpty
+        let passwordValid: Observable = password.rx.text.orEmpty
             .map { $0.count >= minimalPasswordLength }
             .share(replay: 1, scope: .whileConnected)
 
-        let validLogin = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }
+        let validLogin: Observable = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }
             .share(replay: 1, scope: .whileConnected)
 
         usernameValid
@@ -44,8 +44,8 @@ class LoginViewController: UIViewController {
             .bind(to: loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
     }
-    
-    @IBAction func didTouchLogin(_ sender: Any) {
+
+    @IBAction func didTouchLogin(_: Any) {
         loginViewModel.login()
     }
 }

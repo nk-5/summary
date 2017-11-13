@@ -9,7 +9,7 @@ import RxSwift
 
 class LoginViewModel {
 
-    public func login () {
+    public func login() {
         print("login")
     }
 }
