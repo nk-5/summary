@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    let loginViewModel: LoginViewModel = LoginViewModel.init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +43,9 @@ class LoginViewController: UIViewController {
         validLogin
             .bind(to: loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
-
-        loginButton.rx.tap
-            .subscribe({ _ in print("login") })
-            .disposed(by: disposeBag)
+    }
+    
+    @IBAction func didTouchLogin(_ sender: Any) {
+        loginViewModel.login()
     }
 }

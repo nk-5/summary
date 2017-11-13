@@ -38,6 +38,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DPo-zo-zTD"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="didTouchLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZ1-ik-4XU"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gf6-SM-QtK">
                                 <rect key="frame" x="87" y="238" width="200" height="30"/>
