@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Firebase
 
 let minimalEmailLength = 3
 let minimalPasswordLength = 8
@@ -50,7 +49,7 @@ class LoginViewController: UIViewController {
         guard let email = self.email.text else { return }
         guard let password = self.password.text else { return }
 
-        loginViewModel.login(email: email, password: password, completeHandler: { user, errorMessage in
+        loginViewModel.login(email: email, password: password, completeHandler: { _, errorMessage in
             guard let errorMessage = errorMessage else { return }
             // alert error message
             print(errorMessage)
