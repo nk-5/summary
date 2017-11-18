@@ -50,19 +50,10 @@ class LoginViewController: UIViewController {
         guard let email = self.email.text else { return }
         guard let password = self.password.text else { return }
 
-        loginViewModel.login(email: email, password: password, completeHandler: { _, authErrorCode in
-            guard let error = authErrorCode else {
-                return
-            }
-
-            switch error {
-            case .wrongPassword:
-                // TODO: alert view
-                print("wrong password")
-            case .invalidEmail:
-                print("invalid email")
-            default: break
-            }
+        loginViewModel.login(email: email, password: password, completeHandler: { user, errorMessage in
+            guard let errorMessage = errorMessage else { return }
+            // alert error message
+            print(errorMessage)
         })
     }
 }
