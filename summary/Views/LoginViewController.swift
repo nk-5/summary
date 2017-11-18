@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Firebase
 
 let minimalEmailLength = 3
 let minimalPasswordLength = 8
@@ -48,12 +49,19 @@ class LoginViewController: UIViewController {
     @IBAction func didTouchLogin(_: Any) {
         guard let email = self.email.text else { return }
         guard let password = self.password.text else { return }
-        loginViewModel.login(email: email, password: password, completeHandler: { authError in
-            if let error = authError {
-                // add error handling
-                print("Auth error: \(error)")
-            } else {
-                print("Auth success")
+
+        loginViewModel.login(email: email, password: password, completeHandler: { _, authErrorCode in
+            guard let error = authErrorCode else {
+                return
+            }
+
+            switch error {
+            case .wrongPassword:
+                // TODO: alert view
+                print("wrong password")
+            case .invalidEmail:
+                print("invalid email")
+            default: break
             }
         })
     }
