@@ -9,12 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-let minimalUsernameLength = 3
+let minimalEmailLength = 3
 let minimalPasswordLength = 8
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     let loginViewModel: LoginViewModel = LoginViewModel()
@@ -25,18 +25,18 @@ class LoginViewController: UIViewController {
     }
 
     func validateLogin() {
-        let usernameValid: Observable = username.rx.text.orEmpty
-            .map { $0.count >= minimalUsernameLength }
+        let emailValid: Observable = email.rx.text.orEmpty
+            .map { $0.count >= minimalEmailLength }
             .share(replay: 1, scope: .whileConnected)
 
         let passwordValid: Observable = password.rx.text.orEmpty
             .map { $0.count >= minimalPasswordLength }
             .share(replay: 1, scope: .whileConnected)
 
-        let validLogin: Observable = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }
+        let validLogin: Observable = Observable.combineLatest(emailValid, passwordValid) { $0 && $1 }
             .share(replay: 1, scope: .whileConnected)
 
-        usernameValid
+        emailValid
             .bind(to: password.rx.isEnabled)
             .disposed(by: disposeBag)
 
@@ -46,6 +46,15 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func didTouchLogin(_: Any) {
-        loginViewModel.login()
+        guard let email = self.email.text else { return }
+        guard let password = self.password.text else { return }
+        loginViewModel.login(email: email, password: password, completeHandler: { authError in
+            if let error = authError {
+                // add error handling
+                print("Auth error: \(error)")
+            } else {
+                print("Auth success")
+            }
+        })
     }
 }
