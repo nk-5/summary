@@ -17,10 +17,10 @@
 		96C79EC31FAF4DAC0005ED39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC11FAF4DAC0005ED39 /* Main.storyboard */; };
 		96C79EC51FAF4DAC0005ED39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC41FAF4DAC0005ED39 /* Assets.xcassets */; };
 		96C79EC81FAF4DAC0005ED39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC61FAF4DAC0005ED39 /* LaunchScreen.storyboard */; };
-		96C79ED31FAF4DAC0005ED39 /* summaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C79ED21FAF4DAC0005ED39 /* summaryTests.swift */; };
 		96C79EDE1FAF4DAC0005ED39 /* summaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C79EDD1FAF4DAC0005ED39 /* summaryUITests.swift */; };
 		96F2D0AE1FC02BDC008CBB84 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2D0AD1FC02BDC008CBB84 /* LoginViewModelTest.swift */; };
 		96F2D0AF1FC02C6B008CBB84 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47691FB9F0C700E7F872 /* LoginViewModel.swift */; };
+		96F2D0B21FC032DD008CBB84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96F2D0B11FC032DD008CBB84 /* GoogleService-Info.plist */; };
 		E482433C63D2D4ABDFA68FC7 /* Pods_summaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E525F090C8FFC6046EC25E0E /* Pods_summaryTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,12 +58,12 @@
 		96C79EC71FAF4DAC0005ED39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96C79EC91FAF4DAC0005ED39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96C79ECE1FAF4DAC0005ED39 /* summaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = summaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		96C79ED21FAF4DAC0005ED39 /* summaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryTests.swift; sourceTree = "<group>"; };
 		96C79ED41FAF4DAC0005ED39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96C79ED91FAF4DAC0005ED39 /* summaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = summaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C79EDD1FAF4DAC0005ED39 /* summaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryUITests.swift; sourceTree = "<group>"; };
 		96C79EDF1FAF4DAC0005ED39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96F2D0AD1FC02BDC008CBB84 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
+		96F2D0B11FC032DD008CBB84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		999D7DF54FB150F11C934478 /* Pods-summaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-summaryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-summaryTests/Pods-summaryTests.release.xcconfig"; sourceTree = "<group>"; };
 		D78C6009DC487046F2D3803A /* Pods_summary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_summary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB96B0454FF88E9DF2A4145E /* Pods-summaryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-summaryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-summaryUITests/Pods-summaryUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +177,7 @@
 				96C79EC41FAF4DAC0005ED39 /* Assets.xcassets */,
 				96C79EC61FAF4DAC0005ED39 /* LaunchScreen.storyboard */,
 				96C79EC91FAF4DAC0005ED39 /* Info.plist */,
+				96F2D0B11FC032DD008CBB84 /* GoogleService-Info.plist */,
 			);
 			path = summary;
 			sourceTree = "<group>";
@@ -187,7 +188,6 @@
 				96F2D0AA1FC02B99008CBB84 /* Models */,
 				96F2D0AC1FC02BA5008CBB84 /* Views */,
 				96F2D0AB1FC02B9D008CBB84 /* ViewModels */,
-				96C79ED21FAF4DAC0005ED39 /* summaryTests.swift */,
 				96C79ED41FAF4DAC0005ED39 /* Info.plist */,
 			);
 			path = summaryTests;
@@ -268,6 +268,7 @@
 				96C79ECC1FAF4DAC0005ED39 /* Resources */,
 				E594CF78449C6421E7B491F3 /* [CP] Embed Pods Frameworks */,
 				2D2E92E87B829876177B9C18 /* [CP] Copy Pods Resources */,
+				96F2D0B01FC02DC9008CBB84 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -352,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96C79EC81FAF4DAC0005ED39 /* LaunchScreen.storyboard in Resources */,
+				96F2D0B21FC032DD008CBB84 /* GoogleService-Info.plist in Resources */,
 				96C79EC51FAF4DAC0005ED39 /* Assets.xcassets in Resources */,
 				96C79EC31FAF4DAC0005ED39 /* Main.storyboard in Resources */,
 			);
@@ -483,6 +485,19 @@
 			shellPath = /bin/sh;
 			shellScript = "make format";
 		};
+		96F2D0B01FC02DC9008CBB84 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "OUTPUT_FILE=\"$PROJECT_DIR/Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/ViewModels/LoginViewModel.swift\" \\";
+		};
 		BA8EBB525EF2F78DC3C46B6A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,9 +562,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-summaryTests/Pods-summaryTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -576,7 +594,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F2D0AE1FC02BDC008CBB84 /* LoginViewModelTest.swift in Sources */,
-				96C79ED31FAF4DAC0005ED39 /* summaryTests.swift in Sources */,
 				96F2D0AF1FC02C6B008CBB84 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,9 +782,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 70D75BE3C643363FA8C44425 /* Pods-summaryTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDynamicLinks\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/Firestore\"",
+					"\"${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+				);
 				INFOPLIST_FILE = summaryTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -783,9 +813,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 999D7DF54FB150F11C934478 /* Pods-summaryTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDynamicLinks\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/Firestore\"",
+					"\"${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+				);
 				INFOPLIST_FILE = summaryTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
