@@ -15,7 +15,6 @@ target 'summary' do
 
   target 'summaryTests' do
     inherit! :search_paths
-    pod 'Cuckoo'
   end
 
   target 'summaryUITests' do
