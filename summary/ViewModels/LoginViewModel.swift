@@ -24,6 +24,13 @@ class LoginViewModel {
         }
     }
 
+    public func anonymousLogin(completeHandler: @escaping (User?, String?) -> Void) {
+        Auth.auth().signInAnonymously(completion: { user, error in
+            completeHandler(user, self.errorDescription(error: error))
+            return
+        })
+    }
+
     private func errorDescription(error: Error?) -> String? {
         guard let error = error else { return nil }
         return error.localizedDescription

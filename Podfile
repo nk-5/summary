@@ -13,6 +13,10 @@ target 'summary' do
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/AdMob'
 
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+
   target 'summaryTests' do
     inherit! :search_paths
   end

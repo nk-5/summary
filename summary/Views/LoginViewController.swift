@@ -8,20 +8,23 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FacebookLogin
 
 let minimalEmailLength = 3
 let minimalPasswordLength = 8
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var facebookLoginButton: UIView!
+
     let loginViewModel: LoginViewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         validateLogin()
+        createFacebookLoginButton()
     }
 
     func validateLogin() {
@@ -45,6 +48,13 @@ class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
+    func createFacebookLoginButton() {
+        let loginButton = LoginButton(readPermissions: [.publicProfile])
+        loginButton.delegate = self
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+    }
+
     @IBAction func didTouchLogin(_: Any) {
         guard let email = self.email.text else { return }
         guard let password = self.password.text else { return }
@@ -54,5 +64,18 @@ class LoginViewController: UIViewController {
             // alert error message
             print(errorMessage)
         })
+    }
+
+    @IBAction func didTouchAnonymousLogin(_: Any) {
+        loginViewModel.anonymousLogin(completeHandler: { _, errorMessage in
+            guard let errorMessage = errorMessage else { return }
+            print(errorMessage)
+        })
+    }
+
+    func loginButtonDidCompleteLogin(_: LoginButton, result _: LoginResult) {
+    }
+
+    func loginButtonDidLogOut(_: LoginButton) {
     }
 }
