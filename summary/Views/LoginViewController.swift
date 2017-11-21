@@ -73,7 +73,21 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         })
     }
 
-    func loginButtonDidCompleteLogin(_: LoginButton, result _: LoginResult) {
+    // Facebook LoginButtonDelegate
+    func loginButtonDidCompleteLogin(_: LoginButton, result: LoginResult) {
+        switch result {
+        case let .success(grantedPermissions: grantedPermission,
+                          declinedPermissions: declinedPermissions,
+                          token: AccessToken):
+            print("login")
+            print(grantedPermission)
+            print(declinedPermissions)
+            print(AccessToken)
+        case .cancelled:
+            print("cancel")
+        case let .failed(error):
+            print(error)
+        }
     }
 
     func loginButtonDidLogOut(_: LoginButton) {
