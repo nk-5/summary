@@ -178,6 +178,7 @@
 				96C79EB81FAF4DAC0005ED39 /* Resources */,
 				C564C269E6739DD454AE37B0 /* [CP] Embed Pods Frameworks */,
 				00C39C7385DF06B5FA1AB2FD /* [CP] Copy Pods Resources */,
+				968DB54D1FB1F05F0071172C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -399,6 +400,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-summaryUITests/Pods-summaryUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		968DB54D1FB1F05F0071172C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make format";
 		};
 		BA8EBB525EF2F78DC3C46B6A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
