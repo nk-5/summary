@@ -6,4 +6,7 @@ install:
 	${BUNDLE} exec pod install
 
 format:
+ifdef CI
+else
 	$(SWIFT_FORMAT) . --indent 4
+endif
