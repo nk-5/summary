@@ -53,13 +53,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLp-nJ-yj5">
-                                <rect key="frame" x="130" y="158" width="115" height="30"/>
-                                <state key="normal" title="Temporary Login"/>
-                                <connections>
-                                    <action selector="didTouchAnonymousLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ked-dE-ylI"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDc-DB-AMk">
                                 <rect key="frame" x="87" y="488" width="200" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,11 +71,9 @@
                             <constraint firstItem="Aai-Ge-Ddl" firstAttribute="top" secondItem="yDc-DB-AMk" secondAttribute="bottom" constant="25" id="God-Eq-nnw"/>
                             <constraint firstItem="Aai-Ge-Ddl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MP4-XP-dUS"/>
                             <constraint firstItem="yDc-DB-AMk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Me0-V4-yCk"/>
-                            <constraint firstItem="gf6-SM-QtK" firstAttribute="top" secondItem="pLp-nJ-yj5" secondAttribute="bottom" constant="50" id="NJw-Vi-cAI"/>
                             <constraint firstItem="yDc-DB-AMk" firstAttribute="top" secondItem="trg-LS-Fl3" secondAttribute="bottom" constant="140" id="aiL-M8-fDb"/>
                             <constraint firstItem="nXY-no-2Qt" firstAttribute="top" secondItem="gf6-SM-QtK" secondAttribute="bottom" constant="10" id="dg3-B6-5In"/>
                             <constraint firstItem="nXY-no-2Qt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v3T-SG-3hd"/>
-                            <constraint firstItem="pLp-nJ-yj5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xE4-Vt-PWS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

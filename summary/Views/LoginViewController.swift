@@ -66,13 +66,6 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         })
     }
 
-    @IBAction func didTouchAnonymousLogin(_: Any) {
-        loginViewModel.anonymousLogin(completeHandler: { _, errorMessage in
-            guard let errorMessage = errorMessage else { return }
-            print(errorMessage)
-        })
-    }
-
     // Facebook LoginButtonDelegate
     func loginButtonDidCompleteLogin(_: LoginButton, result: LoginResult) {
         switch result {
