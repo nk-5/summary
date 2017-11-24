@@ -14,8 +14,7 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func didTouchCreateRank(_: Any) {
-        let storyboard = UIStoryboard(name: "RankForm", bundle: nil)
-        let vc: RankFormViewController = storyboard.instantiateInitialViewController() as! RankFormViewController
+        let vc: RankFormViewController = RankFormViewController()
         present(vc, animated: true, completion: nil)
     }
 }

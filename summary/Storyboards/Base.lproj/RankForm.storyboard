@@ -17,26 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="ykj-GO-QFv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="LQ9-yC-al2">
-                                <rect key="frame" x="0.0" y="359" width="375" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4m-y2-FWV">
-                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSL-3m-ziS">
-                                        <rect key="frame" x="201.5" y="0.0" width="173.5" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="LQ9-yC-al2" firstAttribute="leading" secondItem="fES-RS-bl8" secondAttribute="leading" id="9D1-R9-Lod"/>
-                            <constraint firstItem="fES-RS-bl8" firstAttribute="trailing" secondItem="LQ9-yC-al2" secondAttribute="trailing" id="Rkw-8i-IoL"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fES-RS-bl8"/>
                     </view>
                 </viewController>
