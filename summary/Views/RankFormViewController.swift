@@ -20,8 +20,8 @@ class RankFormViewController: FormViewController {
         let rankDescription: String = "ランキングの説明（任意）"
 
         form +++ Section(rankTitle)
-            <<< TextRow { row in
-                row.placeholder = rankTitle
+            <<< TextRow {
+                $0.placeholder = rankTitle
             }
 
         form +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: rankTarget) {
@@ -50,8 +50,8 @@ class RankFormViewController: FormViewController {
         }
 
         form +++ Section(rankDescription)
-            <<< TextAreaRow { row in
-                row.placeholder = rankDescription
+            <<< TextAreaRow {
+                $0.placeholder = rankDescription
             }
     }
 
