@@ -13,6 +13,7 @@
 		960B47681FB9EDBB00E7F872 /* RxSwiftConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47671FB9EDBB00E7F872 /* RxSwiftConst.swift */; };
 		960B476A1FB9F0C700E7F872 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47691FB9F0C700E7F872 /* LoginViewModel.swift */; };
 		960B476C1FB9F50C00E7F872 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B476B1FB9F50C00E7F872 /* Users.swift */; };
+		9674A6AB1FC7FA9000F73CD8 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6AA1FC7FA9000F73CD8 /* BaseTabBarController.swift */; };
 		96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */; };
 		96C79EC31FAF4DAC0005ED39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC11FAF4DAC0005ED39 /* Main.storyboard */; };
 		96C79EC51FAF4DAC0005ED39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC41FAF4DAC0005ED39 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		960B47671FB9EDBB00E7F872 /* RxSwiftConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftConst.swift; sourceTree = "<group>"; };
 		960B47691FB9F0C700E7F872 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		960B476B1FB9F50C00E7F872 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		9674A6AA1FC7FA9000F73CD8 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		96C79EBA1FAF4DAC0005ED39 /* summary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = summary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C79EC21FAF4DAC0005ED39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				960B47641FB9DF2A00E7F872 /* LoginViewController.swift */,
+				9674A6AA1FC7FA9000F73CD8 /* BaseTabBarController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			files = (
 				960B476A1FB9F0C700E7F872 /* LoginViewModel.swift in Sources */,
 				960B47651FB9DF2A00E7F872 /* LoginViewController.swift in Sources */,
+				9674A6AB1FC7FA9000F73CD8 /* BaseTabBarController.swift in Sources */,
 				960B476C1FB9F50C00E7F872 /* Users.swift in Sources */,
 				96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */,
 				960B47681FB9EDBB00E7F872 /* RxSwiftConst.swift in Sources */,
