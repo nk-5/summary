@@ -150,7 +150,7 @@
         <!--HOME-->
         <scene sceneID="Xl6-HJ-SPS">
             <objects>
-                <viewController id="RHf-il-ia4" sceneMemberID="viewController">
+                <viewController id="RHf-il-ia4" customClass="HomeViewController" customModule="summary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="14N-ww-JtM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIF-f1-hyP">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="HOME" id="QHT-Ij-2GK"/>
+                                    <navigationItem title="HOME" id="QHT-Ij-2GK">
+                                        <barButtonItem key="rightBarButtonItem" title="ランキング作成" id="0ic-nS-q9i">
+                                            <connections>
+                                                <action selector="didTouchCreateRank:" destination="RHf-il-ia4" id="IIb-Vy-NOg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
