@@ -9,7 +9,6 @@ import UIKit
 import Eureka
 
 class RankFormViewController: FormViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -81,6 +80,7 @@ class RankFormViewController: FormViewController {
     @objc func didTouchCancel() {
         // TODO: back home or room
         print("cancel")
+        dismiss(animated: true, completion: nil)
     }
 
     @objc func didTouchCreateRank() {
