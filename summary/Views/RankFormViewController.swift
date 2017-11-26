@@ -9,6 +9,7 @@ import UIKit
 import Eureka
 
 class RankFormViewController: FormViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,15 +17,17 @@ class RankFormViewController: FormViewController {
 
         let rankTitle: String = "ランキング名"
         let rankTarget: String = "ランキング項目"
-        let rankDescription: String = "ランキングの説明（任意）"
+        let rankDescription: String = "ランキングの説明"
 
-        form +++ Section(rankTitle)
+        form +++ Section(rankTitle + "（必須）")
             <<< TextRow {
+                $0.tag = "rank_title"
                 $0.placeholder = rankTitle
+                $0.add(rule: RuleRequired())
             }
 
-        form +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: rankTarget) {
-            $0.tag = "textfields"
+        form +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], header: rankTarget + "（必須）") {
+            $0.tag = "rank_targets"
             $0.addButtonProvider = { _ in
                 ButtonRow {
                     $0.title = "項目を追加"
@@ -48,8 +51,9 @@ class RankFormViewController: FormViewController {
                 }
         }
 
-        form +++ Section(rankDescription)
+        form +++ Section(rankDescription + "（任意）")
             <<< TextAreaRow {
+                $0.tag = "rank_description"
                 $0.placeholder = rankDescription
             }
     }
@@ -85,6 +89,8 @@ class RankFormViewController: FormViewController {
 
     @objc func didTouchCreateRank() {
         // TODO: create rank
+        // TODO: validate in view model
         print("create")
+        print("\(form.values())")
     }
 }
