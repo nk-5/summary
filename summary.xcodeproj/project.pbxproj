@@ -14,6 +14,9 @@
 		960B476A1FB9F0C700E7F872 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47691FB9F0C700E7F872 /* LoginViewModel.swift */; };
 		960B476C1FB9F50C00E7F872 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B476B1FB9F50C00E7F872 /* Users.swift */; };
 		9674A6AB1FC7FA9000F73CD8 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6AA1FC7FA9000F73CD8 /* BaseTabBarController.swift */; };
+		9674A6AD1FC7FF0C00F73CD8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6AC1FC7FF0C00F73CD8 /* HomeViewController.swift */; };
+		9674A6B11FC802D700F73CD8 /* RankForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9674A6AF1FC802D700F73CD8 /* RankForm.storyboard */; };
+		9674A6B31FC802FA00F73CD8 /* RankFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */; };
 		96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */; };
 		96C79EC31FAF4DAC0005ED39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC11FAF4DAC0005ED39 /* Main.storyboard */; };
 		96C79EC51FAF4DAC0005ED39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC41FAF4DAC0005ED39 /* Assets.xcassets */; };
@@ -52,6 +55,9 @@
 		960B47691FB9F0C700E7F872 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		960B476B1FB9F50C00E7F872 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		9674A6AA1FC7FA9000F73CD8 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		9674A6AC1FC7FF0C00F73CD8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9674A6B01FC802D700F73CD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RankForm.storyboard; sourceTree = "<group>"; };
+		9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankFormViewController.swift; sourceTree = "<group>"; };
 		96C79EBA1FAF4DAC0005ED39 /* summary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = summary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C79EC21FAF4DAC0005ED39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +131,8 @@
 			children = (
 				960B47641FB9DF2A00E7F872 /* LoginViewController.swift */,
 				9674A6AA1FC7FA9000F73CD8 /* BaseTabBarController.swift */,
+				9674A6AC1FC7FF0C00F73CD8 /* HomeViewController.swift */,
+				9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,6 +151,15 @@
 				960B47671FB9EDBB00E7F872 /* RxSwiftConst.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9674A6AE1FC8029C00F73CD8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				96C79EC11FAF4DAC0005ED39 /* Main.storyboard */,
+				9674A6AF1FC802D700F73CD8 /* RankForm.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		96C79EB11FAF4DAC0005ED39 = {
@@ -170,12 +187,12 @@
 		96C79EBC1FAF4DAC0005ED39 /* summary */ = {
 			isa = PBXGroup;
 			children = (
+				9674A6AE1FC8029C00F73CD8 /* Storyboards */,
 				960B47661FB9ED9000E7F872 /* Utils */,
 				960B47611FB9DE1B00E7F872 /* Models */,
 				960B47631FB9DE4000E7F872 /* ViewModels */,
 				960B47621FB9DE3500E7F872 /* Views */,
 				96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */,
-				96C79EC11FAF4DAC0005ED39 /* Main.storyboard */,
 				96C79EC41FAF4DAC0005ED39 /* Assets.xcassets */,
 				96C79EC61FAF4DAC0005ED39 /* LaunchScreen.storyboard */,
 				96C79EC91FAF4DAC0005ED39 /* Info.plist */,
@@ -355,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96C79EC81FAF4DAC0005ED39 /* LaunchScreen.storyboard in Resources */,
+				9674A6B11FC802D700F73CD8 /* RankForm.storyboard in Resources */,
 				96F2D0B21FC032DD008CBB84 /* GoogleService-Info.plist in Resources */,
 				96C79EC51FAF4DAC0005ED39 /* Assets.xcassets in Resources */,
 				96C79EC31FAF4DAC0005ED39 /* Main.storyboard in Resources */,
@@ -527,6 +545,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-summary/Pods-summary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -549,6 +568,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
@@ -602,6 +622,8 @@
 				9674A6AB1FC7FA9000F73CD8 /* BaseTabBarController.swift in Sources */,
 				960B476C1FB9F50C00E7F872 /* Users.swift in Sources */,
 				96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */,
+				9674A6AD1FC7FF0C00F73CD8 /* HomeViewController.swift in Sources */,
+				9674A6B31FC802FA00F73CD8 /* RankFormViewController.swift in Sources */,
 				960B47681FB9EDBB00E7F872 /* RxSwiftConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,6 +660,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9674A6AF1FC802D700F73CD8 /* RankForm.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9674A6B01FC802D700F73CD8 /* Base */,
+			);
+			name = RankForm.storyboard;
+			sourceTree = "<group>";
+		};
 		96C79EC11FAF4DAC0005ED39 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
