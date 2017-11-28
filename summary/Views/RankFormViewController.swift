@@ -82,8 +82,6 @@ class RankFormViewController: FormViewController {
     }
 
     @objc func didTouchCancel() {
-        // TODO: back home or room
-        print("cancel")
         dismiss(animated: true, completion: nil)
     }
 

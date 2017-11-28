@@ -24,6 +24,7 @@
 		96F2D0AE1FC02BDC008CBB84 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2D0AD1FC02BDC008CBB84 /* LoginViewModelTest.swift */; };
 		96F2D0AF1FC02C6B008CBB84 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47691FB9F0C700E7F872 /* LoginViewModel.swift */; };
 		96F2D0B21FC032DD008CBB84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96F2D0B11FC032DD008CBB84 /* GoogleService-Info.plist */; };
+		96FAA04F1FCDBB4900F0953C /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FAA04E1FCDBB4900F0953C /* RoomViewController.swift */; };
 		E482433C63D2D4ABDFA68FC7 /* Pods_summaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E525F090C8FFC6046EC25E0E /* Pods_summaryTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		96C79EDF1FAF4DAC0005ED39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96F2D0AD1FC02BDC008CBB84 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
 		96F2D0B11FC032DD008CBB84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		96FAA04E1FCDBB4900F0953C /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		999D7DF54FB150F11C934478 /* Pods-summaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-summaryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-summaryTests/Pods-summaryTests.release.xcconfig"; sourceTree = "<group>"; };
 		D78C6009DC487046F2D3803A /* Pods_summary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_summary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB96B0454FF88E9DF2A4145E /* Pods-summaryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-summaryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-summaryUITests/Pods-summaryUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				9674A6AA1FC7FA9000F73CD8 /* BaseTabBarController.swift */,
 				9674A6AC1FC7FF0C00F73CD8 /* HomeViewController.swift */,
 				9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */,
+				96FAA04E1FCDBB4900F0953C /* RoomViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				960B476C1FB9F50C00E7F872 /* Users.swift in Sources */,
 				96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */,
 				9674A6AD1FC7FF0C00F73CD8 /* HomeViewController.swift in Sources */,
+				96FAA04F1FCDBB4900F0953C /* RoomViewController.swift in Sources */,
 				9674A6B31FC802FA00F73CD8 /* RankFormViewController.swift in Sources */,
 				960B47681FB9EDBB00E7F872 /* RxSwiftConst.swift in Sources */,
 			);
