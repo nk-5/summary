@@ -113,9 +113,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-nE-9JP">
-                                <rect key="frame" x="278" y="540" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-nE-9JP">
+                                <rect key="frame" x="277" y="558" width="78" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YKj-Mq-mBI"/>
+                                </constraints>
                                 <state key="normal" title="share room"/>
                                 <connections>
                                     <action selector="didTouchShare:" destination="nKp-Gp-gX2" eventType="touchUpInside" id="Okm-DM-riG"/>
@@ -125,11 +127,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WQz-X4-Kac" firstAttribute="centerX" secondItem="x1t-ra-aN2" secondAttribute="centerX" id="1HT-nb-lBH"/>
+                            <constraint firstItem="s2c-nE-9JP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x1t-ra-aN2" secondAttribute="leading" constant="20" symbolic="YES" id="4jd-fy-kI8"/>
                             <constraint firstItem="WQz-X4-Kac" firstAttribute="leading" secondItem="wRs-NG-ch4" secondAttribute="leading" id="DNd-Mc-Jqa"/>
                             <constraint firstItem="w7S-sr-zsL" firstAttribute="centerX" secondItem="x1t-ra-aN2" secondAttribute="centerX" id="J0f-M0-gLC"/>
                             <constraint firstItem="WQz-X4-Kac" firstAttribute="centerY" secondItem="x1t-ra-aN2" secondAttribute="centerY" constant="7.5" id="OW3-Yx-Sew"/>
+                            <constraint firstItem="wRs-NG-ch4" firstAttribute="trailing" secondItem="s2c-nE-9JP" secondAttribute="trailing" constant="20" id="eJP-7a-Toj"/>
                             <constraint firstItem="wRs-NG-ch4" firstAttribute="bottom" secondItem="WQz-X4-Kac" secondAttribute="bottom" id="fmV-hL-Ge5"/>
                             <constraint firstItem="w7S-sr-zsL" firstAttribute="leading" secondItem="wRs-NG-ch4" secondAttribute="leading" id="hO7-cu-CUz"/>
+                            <constraint firstItem="wRs-NG-ch4" firstAttribute="bottom" secondItem="s2c-nE-9JP" secondAttribute="bottom" constant="30" id="tWA-kT-IVt"/>
                             <constraint firstItem="wRs-NG-ch4" firstAttribute="trailing" secondItem="WQz-X4-Kac" secondAttribute="trailing" id="uKP-b5-SUc"/>
                             <constraint firstItem="WQz-X4-Kac" firstAttribute="bottom" secondItem="wRs-NG-ch4" secondAttribute="bottom" id="vsM-Ib-BIb"/>
                             <constraint firstItem="w7S-sr-zsL" firstAttribute="top" secondItem="x1t-ra-aN2" secondAttribute="topMargin" id="yRN-kI-ELg"/>
