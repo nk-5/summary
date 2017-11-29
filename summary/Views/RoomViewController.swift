@@ -27,6 +27,7 @@ enum RankState: Int {
     }
 }
 
+// TODO: public/private rank use common struct
 struct RoomRank {
     var name: String
     var state: String
@@ -44,12 +45,13 @@ extension SectionOfRoomRank: SectionModelType {
     }
 }
 
-class RoomViewController: UIViewController {
+class RoomViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var rankView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        rankView.delegate = self
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfRoomRank>(
             configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: RoomRank) -> UITableViewCell in
@@ -70,6 +72,11 @@ class RoomViewController: UIViewController {
         Observable.just(section)
             .bind(to: rankView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+    }
+
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: present Ranking detail view
+        print("select rank. index path is \(indexPath.row)")
     }
 
     @IBAction func didTouchCreateRank(_: Any) {
