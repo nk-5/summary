@@ -27,7 +27,13 @@ enum RankState: Int {
     }
 }
 
-// TODO: public/private rank use common struct
+struct Room {
+    var name: String
+    var ranks: [RoomRank]
+}
+
+// TODO: public/private use common struct Rank
+// now tmp RoomRank, replace Rank struct
 struct RoomRank {
     var name: String
     var state: String
@@ -75,8 +81,14 @@ class RoomViewController: UIViewController, UITableViewDelegate {
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: present Ranking detail view
         print("select rank. index path is \(indexPath.row)")
+        let storyboard: UIStoryboard = UIStoryboard(name: "VoteView", bundle: nil)
+        let vc: VoteViewController = storyboard.instantiateInitialViewController() as! VoteViewController
+
+        // TODO: delete tmp room variable
+        let room: Room = Room(name: "test", ranks: [RoomRank(name: "rank1", state: RankState.ready.description())])
+        vc.rankName = room.ranks[indexPath.row].name
+        present(vc, animated: true, completion: nil)
     }
 
     @IBAction func didTouchCreateRank(_: Any) {
