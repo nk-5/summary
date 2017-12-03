@@ -10,41 +10,12 @@ import RxSwift
 import RxDataSources
 import RxCocoa
 
-enum RankState: Int {
-    case ready
-    case voting
-    case finished
-
-    func description() -> String {
-        switch self {
-        case .ready:
-            return "準備中"
-        case .voting:
-            return "開催中"
-        case .finished:
-            return "終了"
-        }
-    }
-}
-
-struct Room {
-    var name: String
-    var ranks: [RoomRank]
-}
-
-// TODO: public/private use common struct Rank
-// now tmp RoomRank, replace Rank struct
-struct RoomRank {
-    var name: String
-    var state: String
-}
-
 struct SectionOfRoomRank {
     var items: [Item]
 }
 
 extension SectionOfRoomRank: SectionModelType {
-    typealias Item = RoomRank
+    typealias Item = Rank
 
     init(original _: SectionOfRoomRank, items: [Item]) {
         self.items = items
@@ -60,18 +31,18 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         rankView.delegate = self
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfRoomRank>(
-            configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: RoomRank) -> UITableViewCell in
+            configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: Rank) -> UITableViewCell in
                 let cell = tv.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
-                cell.textLabel?.text = "\(item.name) 状態：\(item.state)"
+                cell.textLabel?.text = "\(item.name) 状態：\(item.state.description())"
                 return cell
         })
 
         // TODO: datasource get from Firestore
         let section = [
             SectionOfRoomRank(items: [
-                RoomRank(name: "test rank name", state: RankState.ready.description()),
-                RoomRank(name: "hogehoge rank", state: RankState.voting.description()),
-                RoomRank(name: "fugafuga rank", state: RankState.finished.description()),
+                Rank(name: "test rank name", state: RankState.ready),
+                Rank(name: "hogehoge rank", state: RankState.voting),
+                Rank(name: "fugafuga rank", state: RankState.finished),
             ]),
         ]
 
@@ -86,8 +57,9 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         let vc: VoteViewController = storyboard.instantiateInitialViewController() as! VoteViewController
 
         // TODO: delete tmp room variable
-        let room: Room = Room(name: "test", ranks: [RoomRank(name: "rank1", state: RankState.ready.description())])
-        vc.rankName = room.ranks[indexPath.row].name
+        let room: Room = Room(name: "test", ranks: [Rank(name: "rank1", state: RankState.ready)])
+        vc.rank = room.ranks[0]
+//        vc.rank = room.ranks[indexPath.row]
         present(vc, animated: true, completion: nil)
     }
 

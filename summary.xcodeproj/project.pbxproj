@@ -19,6 +19,7 @@
 		9674A6AD1FC7FF0C00F73CD8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6AC1FC7FF0C00F73CD8 /* HomeViewController.swift */; };
 		9674A6B11FC802D700F73CD8 /* RankForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9674A6AF1FC802D700F73CD8 /* RankForm.storyboard */; };
 		9674A6B31FC802FA00F73CD8 /* RankFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */; };
+		969E9DF71FD43E280030B8B2 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969E9DF61FD43E280030B8B2 /* Struct.swift */; };
 		96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */; };
 		96C79EC31FAF4DAC0005ED39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC11FAF4DAC0005ED39 /* Main.storyboard */; };
 		96C79EC51FAF4DAC0005ED39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC41FAF4DAC0005ED39 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		9674A6AC1FC7FF0C00F73CD8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9674A6B01FC802D700F73CD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RankForm.storyboard; sourceTree = "<group>"; };
 		9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankFormViewController.swift; sourceTree = "<group>"; };
+		969E9DF61FD43E280030B8B2 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		96C79EBA1FAF4DAC0005ED39 /* summary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = summary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C79EC21FAF4DAC0005ED39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				960B47671FB9EDBB00E7F872 /* RxSwiftConst.swift */,
+				969E9DF61FD43E280030B8B2 /* Struct.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				96FAA04F1FCDBB4900F0953C /* RoomViewController.swift in Sources */,
 				9674A6B31FC802FA00F73CD8 /* RankFormViewController.swift in Sources */,
 				960B47681FB9EDBB00E7F872 /* RxSwiftConst.swift in Sources */,
+				969E9DF71FD43E280030B8B2 /* Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,12 +9,12 @@ import UIKit
 
 class VoteViewController: UIViewController {
 
-    var rankName: String?
+    var rank: Rank?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO: add error handling
-        guard let rankName = rankName else { return }
+        guard let rankName = rank?.name else { return }
         print(rankName)
     }
 }
