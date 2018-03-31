@@ -8,7 +8,6 @@
 import UIKit
 
 class VoteViewController: UIViewController {
-
     var rank: Rank?
 
     override func viewDidLoad() {

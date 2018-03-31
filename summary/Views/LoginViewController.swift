@@ -5,19 +5,19 @@
 //  Copyright © 2017年 ArgentVGL. All rights reserved.
 //
 
-import UIKit
-import RxSwift
-import RxCocoa
 import FacebookLogin
+import RxCocoa
+import RxSwift
+import UIKit
 
 let minimalEmailLength = 3
 let minimalPasswordLength = 8
 
 class LoginViewController: UIViewController, LoginButtonDelegate {
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var facebookLoginButton: UIView!
+    @IBOutlet var email: UITextField!
+    @IBOutlet var password: UITextField!
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var facebookLoginButton: UIView!
 
     let loginViewModel: LoginViewModel = LoginViewModel()
 

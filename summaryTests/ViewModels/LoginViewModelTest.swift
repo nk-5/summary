@@ -5,11 +5,10 @@
 //  Copyright © 2017年 ArgentVGL. All rights reserved.
 //
 
-import XCTest
 import Firebase
+import XCTest
 
 class LoginViewModelTest: XCTestCase {
-
     // this mock class is deprecate and this test code is not goods
     class MockLoginViewModel: LoginViewModel {
         public func errorDescription(error: Error?) -> String? {

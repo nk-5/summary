@@ -5,11 +5,10 @@
 //  Copyright © 2017年 ArgentVGL. All rights reserved.
 //
 
-import UIKit
 import Firebase
+import UIKit
 
 class BaseTabBarController: UITabBarController {
-
     override func viewDidLoad() {
         let loginViewModel: LoginViewModel = LoginViewModel()
         loginViewModel.anonymousLogin(completeHandler: { user, error in

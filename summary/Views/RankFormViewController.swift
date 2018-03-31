@@ -5,11 +5,10 @@
 //  Copyright © 2017年 ArgentVGL. All rights reserved.
 //
 
-import UIKit
 import Eureka
+import UIKit
 
 class RankFormViewController: FormViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

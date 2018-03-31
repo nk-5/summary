@@ -5,10 +5,10 @@
 //  Copyright © 2017年 ArgentVGL. All rights reserved.
 //
 
-import UIKit
-import RxSwift
-import RxDataSources
 import RxCocoa
+import RxDataSources
+import RxSwift
+import UIKit
 
 struct SectionOfRoomRank {
     var items: [Item]
@@ -23,8 +23,7 @@ extension SectionOfRoomRank: SectionModelType {
 }
 
 class RoomViewController: UIViewController, UITableViewDelegate {
-
-    @IBOutlet weak var rankView: UITableView!
+    @IBOutlet var rankView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
