@@ -11,6 +11,7 @@ PODS:
   - BoringSSL/Implementation (9.1):
     - BoringSSL/Interface (= 9.1)
   - BoringSSL/Interface (9.1)
+  - Differentiator (3.0.2)
   - Eureka (4.0.1)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
@@ -105,6 +106,10 @@ PODS:
   - Protobuf (3.4.0)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
+  - RxDataSources (3.0.2):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
 
 DEPENDENCIES:
@@ -118,6 +123,7 @@ DEPENDENCIES:
   - Firebase/DynamicLinks
   - Firestore (from `https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json`)
   - RxCocoa (~> 4.0)
+  - RxDataSources (~> 3.0)
   - RxSwift (~> 4.0)
 
 EXTERNAL SOURCES:
@@ -127,6 +133,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
+  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
@@ -152,8 +159,9 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
 
-PODFILE CHECKSUM: 4f3c6f308d75e0fad16ef89589b2a40eaaf3b6d6
+PODFILE CHECKSUM: 6c17fed449021977d8db86f82130aee30ce6cfb3
 
 COCOAPODS: 1.3.1
