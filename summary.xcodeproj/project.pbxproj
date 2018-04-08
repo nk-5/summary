@@ -516,7 +516,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "make format";
+			shellScript = "#make format";
 		};
 		96F2D0B01FC02DC9008CBB84 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
