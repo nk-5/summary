@@ -8,12 +8,19 @@
 import UIKit
 
 class VoteViewController: UIViewController {
+    @IBOutlet var rankName: UILabel!
+
     var rank: Rank?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO: add error handling
-        guard let rankName = rank?.name else { return }
-        print(rankName)
+        // TODO: stackview-v add stackview-h
+        guard let name = rank?.name else { return }
+        rankName.text = name
+    }
+
+    @IBAction func didTouchCancel(_: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

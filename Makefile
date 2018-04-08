@@ -8,5 +8,5 @@ install:
 format:
 ifdef CI
 else
-	$(SWIFT_FORMAT) . --indent 4
+	swiftformat ./summary --indent 4
 endif

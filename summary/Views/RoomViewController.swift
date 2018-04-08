@@ -56,10 +56,10 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         let vc: VoteViewController = storyboard.instantiateInitialViewController() as! VoteViewController
 
         // TODO: delete tmp room variable
+        // TODO: set section value
         let room: Room = Room(name: "test", ranks: [Rank(name: "rank1", state: RankState.ready)])
         vc.rank = room.ranks[0]
-//        vc.rank = room.ranks[indexPath.row]
-        present(vc, animated: true, completion: nil)
+        show(vc, sender: nil)
     }
 
     @IBAction func didTouchCreateRank(_: Any) {
