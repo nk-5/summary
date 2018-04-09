@@ -25,6 +25,8 @@ extension SectionOfRoomRank: SectionModelType {
 class RoomViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var rankView: UITableView!
 
+    var roomRanks: [Rank?] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         rankView.delegate = self
@@ -48,6 +50,8 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         Observable.just(section)
             .bind(to: rankView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+
+        roomRanks = section[0].items
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -56,8 +60,10 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         let vc: VoteViewController = storyboard.instantiateInitialViewController() as! VoteViewController
 
         // TODO: delete tmp room variable
-        // TODO: set section value
-        let room: Room = Room(name: "test", ranks: [Rank(name: "rank1", state: RankState.ready)])
+        guard let roomName = roomRanks[indexPath.row]?.name else { return }
+        guard let roomState = roomRanks[indexPath.row]?.state else { return }
+
+        let room: Room = Room(name: "test", ranks: [Rank(name: roomName, state: roomState)])
         vc.rank = room.ranks[0]
         show(vc, sender: nil)
     }
