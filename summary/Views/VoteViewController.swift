@@ -20,19 +20,23 @@ class VoteViewController: UIViewController {
 
         guard let name = rank?.name else { return }
         rankTitle.text = name
+        createTargetSubView()
+    }
 
+    func createTargetSubView() {
         let target: UIStackView = UIStackView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
         target.axis = .horizontal
         target.distribution = .fill
 
-        let testLabel = UILabel()
-        testLabel.text = "ranktarget"
-        target.addArrangedSubview(testLabel)
+        let targetName = UILabel()
+        // rank.target
+        targetName.text = "target name"
+        target.addArrangedSubview(targetName)
 
-        let testButton = UIButton()
-        testButton.setTitle("select", for: .normal)
-        testButton.setTitleColor(view.tintColor, for: .normal)
-        target.addArrangedSubview(testButton)
+        let targetSelectButton = UIButton()
+        targetSelectButton.setTitle("select", for: .normal)
+        targetSelectButton.setTitleColor(view.tintColor, for: .normal)
+        target.addArrangedSubview(targetSelectButton)
 
         targets.insertArrangedSubview(target, at: 0)
     }
@@ -40,5 +44,4 @@ class VoteViewController: UIViewController {
     @IBAction func didTouchCancel(_: Any) {
         dismiss(animated: true, completion: nil)
     }
-
 }
