@@ -9,7 +9,7 @@ import UIKit
 
 class VoteViewController: UIViewController {
     @IBOutlet var rankTitle: UILabel!
-    @IBOutlet var targets: UIStackView!
+    @IBOutlet var targetsView: UIStackView!
 
     var rank: Rank?
 
@@ -24,24 +24,27 @@ class VoteViewController: UIViewController {
     }
 
     func createTargetSubView() {
-        let target: UIStackView = UIStackView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
-        target.axis = .horizontal
-        target.distribution = .fill
+        // TODO: refactor RxSwift
+        guard let targets = rank?.targets else { return }
+        for target in targets {
+            let targetView: UIStackView = UIStackView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
+            targetView.axis = .horizontal
+            targetView.distribution = .fill
 
-        let targetName = UILabel()
-        // rank.target
-        targetName.text = "target name"
-        target.addArrangedSubview(targetName)
+            let targetName = UILabel()
+            targetName.text = target
+            targetView.addArrangedSubview(targetName)
 
-        let targetSelectButton = UIButton()
-        targetSelectButton.setTitle("select", for: .normal)
-        targetSelectButton.setTitleColor(view.tintColor, for: .normal)
-        targetSelectButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        target.addArrangedSubview(targetSelectButton)
+            let targetSelectButton = UIButton()
+            targetSelectButton.setTitle("select", for: .normal)
+            targetSelectButton.setTitleColor(view.tintColor, for: .normal)
+            targetSelectButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            targetView.addArrangedSubview(targetSelectButton)
 
-        targets.insertArrangedSubview(target, at: 0)
-        target.leadingAnchor.constraint(equalTo: targets.leadingAnchor, constant: 0).isActive = true
-        target.leftAnchor.constraint(equalTo: targets.leftAnchor, constant: 0).isActive = true
+            targetsView.insertArrangedSubview(targetView, at: 0)
+            targetView.leadingAnchor.constraint(equalTo: targetsView.leadingAnchor, constant: 0).isActive = true
+            targetView.leftAnchor.constraint(equalTo: targetsView.leftAnchor, constant: 0).isActive = true
+        }
     }
 
     @IBAction func didTouchCancel(_: Any) {

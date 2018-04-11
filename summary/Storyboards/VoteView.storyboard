@@ -68,7 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="rankTitle" destination="WHf-Kh-qeK" id="Ezy-Mu-s4c"/>
-                        <outlet property="targets" destination="Etb-Jl-QYa" id="nZl-gL-Oii"/>
+                        <outlet property="targetsView" destination="Etb-Jl-QYa" id="g5s-NH-YtY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYv-o8-FKd" userLabel="First Responder" sceneMemberID="firstResponder"/>

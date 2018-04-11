@@ -29,6 +29,7 @@ public enum RankState: Int {
 struct Rank {
     var name: String
     var state: RankState
+    var targets: [String]
     //    var users: [User]
 }
 
