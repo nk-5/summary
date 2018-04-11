@@ -58,13 +58,7 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         print("select rank. index path is \(indexPath.row)")
         let storyboard: UIStoryboard = UIStoryboard(name: "VoteView", bundle: nil)
         let vc: VoteViewController = storyboard.instantiateInitialViewController() as! VoteViewController
-
-        // TODO: delete tmp room variable
-        guard let roomName = roomRanks[indexPath.row]?.name else { return }
-        guard let roomState = roomRanks[indexPath.row]?.state else { return }
-
-        let room: Room = Room(name: "test", ranks: [Rank(name: roomName, state: roomState)])
-        vc.rank = room.ranks[0]
+        vc.rank = roomRanks[indexPath.row]
         show(vc, sender: nil)
     }
 

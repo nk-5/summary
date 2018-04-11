@@ -36,9 +36,12 @@ class VoteViewController: UIViewController {
         let targetSelectButton = UIButton()
         targetSelectButton.setTitle("select", for: .normal)
         targetSelectButton.setTitleColor(view.tintColor, for: .normal)
+        targetSelectButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         target.addArrangedSubview(targetSelectButton)
 
         targets.insertArrangedSubview(target, at: 0)
+        target.leadingAnchor.constraint(equalTo: targets.leadingAnchor, constant: 0).isActive = true
+        target.leftAnchor.constraint(equalTo: targets.leftAnchor, constant: 0).isActive = true
     }
 
     @IBAction func didTouchCancel(_: Any) {
