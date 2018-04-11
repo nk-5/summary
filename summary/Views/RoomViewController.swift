@@ -25,6 +25,8 @@ extension SectionOfRoomRank: SectionModelType {
 class RoomViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var rankView: UITableView!
 
+    var roomRanks: [Rank?] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         rankView.delegate = self
@@ -39,27 +41,25 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         // TODO: datasource get from Firestore
         let section = [
             SectionOfRoomRank(items: [
-                Rank(name: "test rank name", state: RankState.ready),
-                Rank(name: "hogehoge rank", state: RankState.voting),
-                Rank(name: "fugafuga rank", state: RankState.finished),
+                Rank(name: "test rank name", state: RankState.ready, targets: ["test", "hoge", "fuga"]),
+                Rank(name: "hogehoge rank", state: RankState.voting, targets: ["fuga", "hoge", "test"]),
+                Rank(name: "fugafuga rank", state: RankState.finished, targets: ["fuga", "test", "hoge"]),
             ]),
         ]
 
         Observable.just(section)
             .bind(to: rankView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+
+        roomRanks = section[0].items
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select rank. index path is \(indexPath.row)")
         let storyboard: UIStoryboard = UIStoryboard(name: "VoteView", bundle: nil)
         let vc: VoteViewController = storyboard.instantiateInitialViewController() as! VoteViewController
-
-        // TODO: delete tmp room variable
-        let room: Room = Room(name: "test", ranks: [Rank(name: "rank1", state: RankState.ready)])
-        vc.rank = room.ranks[0]
-//        vc.rank = room.ranks[indexPath.row]
-        present(vc, animated: true, completion: nil)
+        vc.rank = roomRanks[indexPath.row]
+        show(vc, sender: nil)
     }
 
     @IBAction func didTouchCreateRank(_: Any) {
