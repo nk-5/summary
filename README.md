@@ -33,6 +33,7 @@
 #### CI Service
 
 * [Bitrise](https://www.bitrise.io/)
+  * stop now because build time over 10 minutes
 
 ## How to install
 

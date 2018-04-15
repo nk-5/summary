@@ -113,6 +113,7 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
+  - SwiftFormat/CLI (0.33.5)
 
 DEPENDENCIES:
   - Eureka
@@ -127,6 +128,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - SwiftFormat/CLI
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -159,7 +161,8 @@ SPEC CHECKSUMS:
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxDataSources: 5a5ad827b6ad91730bb4b3ed87739f28a7be3d84
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  SwiftFormat: 13fd81206cf4453c19f1a5c51768c8c0d9165c30
 
-PODFILE CHECKSUM: 1596778712cc3ea9734929c6ba419eb6552b7007
+PODFILE CHECKSUM: bad56e81e3d9af777529cc8ce6e11bb3b102689f
 
 COCOAPODS: 1.3.1
