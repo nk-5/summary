@@ -4,6 +4,8 @@ platform :ios, '9.0'
 target 'summary' do
   use_frameworks!
 
+  pod 'SwiftFormat/CLI'
+
   # Rx
   pod 'RxSwift'
   pod 'RxCocoa'
