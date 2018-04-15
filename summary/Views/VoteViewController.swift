@@ -19,12 +19,15 @@ class VoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO: add error handling
-        // TODO: set rank target
 
         guard let name = rank?.name else { return }
         rankTitle.text = name
 
         createTargetSubView()
+
+        voteButton.rx.tap.subscribe({ _ in
+            // TODO: vote button tapped show alert
+        }).disposed(by: disposeBag)
     }
 
     func createTargetSubView() {
@@ -68,8 +71,7 @@ class VoteViewController: UIViewController {
             if button.isEnabled {
                 button.setTitle("select", for: .normal)
             }
-        })
-            .disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     @IBAction func didTouchCancel(_: Any) {
