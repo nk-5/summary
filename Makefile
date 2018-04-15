@@ -1,5 +1,5 @@
 BUNDLE?=$(shell which bundle)
-SWIFT_FORMAT?=.Pods/SwiftFormat/CommandLineTool/swiftformat
+SWIFT_FORMAT?=./Pods/SwiftFormat/CommandLineTool/swiftformat
 
 install:
 	$(BUNDLE) install --path=vendor/bundle
