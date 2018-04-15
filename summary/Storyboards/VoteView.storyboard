@@ -69,6 +69,7 @@
                     <connections>
                         <outlet property="rankTitle" destination="WHf-Kh-qeK" id="Ezy-Mu-s4c"/>
                         <outlet property="targetsView" destination="Etb-Jl-QYa" id="g5s-NH-YtY"/>
+                        <outlet property="voteButton" destination="rgD-WJ-04o" id="0CX-gA-3Pp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYv-o8-FKd" userLabel="First Responder" sceneMemberID="firstResponder"/>

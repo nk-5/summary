@@ -11,6 +11,7 @@ import UIKit
 class VoteViewController: UIViewController {
     @IBOutlet var rankTitle: UILabel!
     @IBOutlet var targetsView: UIStackView!
+    @IBOutlet var voteButton: UIButton!
 
     var rank: Rank?
     let selectButtons = ReplaySubject<UIButton>.createUnbounded()
@@ -39,12 +40,15 @@ class VoteViewController: UIViewController {
             let targetSelectButton = UIButton()
             targetSelectButton.setTitle("select", for: .normal)
             targetSelectButton.setTitleColor(self.view.tintColor, for: .normal)
-            targetSelectButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            targetSelectButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
             targetView.addArrangedSubview(targetSelectButton)
             targetSelectButton.rx.tap
                 .subscribe({ _ in
                     self.changeSelectButtonTitle()
                     targetSelectButton.setTitle("selected", for: .normal)
+
+                    // when select button enabled
+                    self.voteButton.isEnabled = true
                 })
                 .disposed(by: disposeBag)
 
@@ -65,7 +69,7 @@ class VoteViewController: UIViewController {
                 button.setTitle("select", for: .normal)
             }
         })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
 
     @IBAction func didTouchCancel(_: Any) {
