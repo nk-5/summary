@@ -7,31 +7,31 @@
 
 import Foundation
 
-public enum UserRoomState: Int {
-    case invited
-    case joined
-    case rejected
+public class Room: NSObject {
+    public enum UserState: Int {
+        case invited
+        case joined
+        case rejected
 
-    func description() -> String {
-        switch self {
-        case .invited:
-            return "invited"
-        case .joined:
-            return "joined"
-        case .rejected:
-            return "rejected"
+        func description() -> String {
+            switch self {
+            case .invited:
+                return "invited"
+            case .joined:
+                return "joined"
+            case .rejected:
+                return "rejected"
+            }
         }
     }
-}
 
-public class Room: NSObject {
     let id: String
-    let users: [User?]
-    let ranks: [Rank?]
+    let users: [Room.User?]
+    let ranks: [Room.Rank?]
 
     struct User {
         let id: String
-        let state: UserRoomState
+        let state: Room.UserState
     }
 
     struct Rank {
@@ -40,7 +40,7 @@ public class Room: NSObject {
         let state: RankState
     }
 
-    init(id: String, users: [User?], ranks: [Rank?]) {
+    init(id: String, users: [Room.User?], ranks: [Room.Rank?]) {
         self.id = id
         self.users = users
         self.ranks = ranks

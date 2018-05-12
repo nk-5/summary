@@ -7,14 +7,14 @@
 
 import Foundation
 
-public enum Gender: Int {
-    case male
-    case female
-    case unknown
-}
-
 // TODO: add Organizations
 public class User: NSObject {
+    public enum Gender: Int {
+        case male
+        case female
+        case unknown
+    }
+
     struct Room {
         let id: String
     }
@@ -24,15 +24,15 @@ public class User: NSObject {
     }
 
     let id: String
-    let rooms: [Room?]
-    let ranks: [Rank?]
+    let rooms: [User.Room?]
+    let ranks: [User.Rank?]
     let age: Int?
     let email: String?
     let icon: Data?
     let password: String?
-    let gender: Gender?
+    let gender: User.Gender?
 
-    init(id: String, rooms: [Room?], ranks: [Rank?], age: Int?, email: String?, icon: Data?, password: String?, gender: Gender?) {
+    init(id: String, rooms: [User.Room?], ranks: [User.Rank?], age: Int?, email: String?, icon: Data?, password: String?, gender: User.Gender?) {
         self.id = id
         self.rooms = rooms
         self.ranks = ranks
