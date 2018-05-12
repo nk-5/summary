@@ -6,18 +6,18 @@
 //
 
 public enum RankState: Int {
-    case ready
-    case voting
+    case prepare
+    case open
     case finished
 
     func description() -> String {
         switch self {
-        case .ready:
-            return "準備中"
-        case .voting:
-            return "開催中"
+        case .prepare:
+            return "prepare"
+        case .open:
+            return "open"
         case .finished:
-            return "終了"
+            return "finished"
         }
     }
 }
@@ -26,6 +26,7 @@ public enum RankState: Int {
 //    var name: String
 // }
 
+// TODO: classにするのと、構成を変える
 struct Rank {
     var name: String
     var state: RankState
