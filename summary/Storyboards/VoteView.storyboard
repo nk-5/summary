@@ -47,7 +47,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="vote"/>
                                                 <connections>
-                                                    <segue destination="NbZ-JY-8Mx" kind="show" id="7PM-ez-LFi"/>
+                                                    <segue destination="NbZ-JY-8Mx" kind="show" id="F0Z-GW-Mqe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -87,32 +87,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投票中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IH0-EX-Yfy">
-                                <rect key="frame" x="161.5" y="99" width="52" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="voting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IH0-EX-Yfy">
+                                <rect key="frame" x="164" y="99" width="47.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mDe-PM-RHB">
-                                <rect key="frame" x="0.0" y="149.5" width="375" height="60.5"/>
+                                <rect key="frame" x="0.0" y="149" width="375" height="60.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fxE-jn-QXt">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投票率" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGD-zY-gIp">
-                                                <rect key="frame" x="0.0" y="0.0" width="152" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vote rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGD-zY-gIp">
+                                                <rect key="frame" x="0.0" y="0.0" width="176" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfz-9j-nbQ">
-                                                <rect key="frame" x="152" y="0.0" width="71" height="20.5"/>
+                                                <rect key="frame" x="176" y="0.0" width="63" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="非公開" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkE-N4-ncT">
-                                                <rect key="frame" x="223.5" y="0.0" width="151.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="private" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkE-N4-ncT">
+                                                <rect key="frame" x="239" y="0.0" width="136" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khs-rX-Nkr">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                                <state key="normal" title="投票締め切り"/>
+                                                <state key="normal" title="close"/>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -136,7 +136,7 @@
                                     <navigationItem id="fV4-Zb-BFH">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="peR-Wy-dQX">
                                             <connections>
-                                                <action selector="didTouchCancel:" destination="fdR-8I-Edp" id="sUr-Pt-UCb"/>
+                                                <action selector="didTouchCancel:" destination="NbZ-JY-8Mx" id="1Tk-gK-0cn"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -157,6 +157,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bNi-xd-6fX"/>
                     </view>
+                    <connections>
+                        <outlet property="aggregateView" destination="mDe-PM-RHB" id="IIm-pi-gb2"/>
+                        <outlet property="closeBtn" destination="Khs-rX-Nkr" id="4dU-g9-q7p"/>
+                        <outlet property="voteRate" destination="Jfz-9j-nbQ" id="XbE-94-OlF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Mc-Vc-Qdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
