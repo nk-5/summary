@@ -12,7 +12,7 @@
 		960B47651FB9DF2A00E7F872 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47641FB9DF2A00E7F872 /* LoginViewController.swift */; };
 		960B47681FB9EDBB00E7F872 /* RxSwiftConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47671FB9EDBB00E7F872 /* RxSwiftConst.swift */; };
 		960B476A1FB9F0C700E7F872 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47691FB9F0C700E7F872 /* LoginViewModel.swift */; };
-		960B476C1FB9F50C00E7F872 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B476B1FB9F50C00E7F872 /* Users.swift */; };
+		960B476C1FB9F50C00E7F872 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B476B1FB9F50C00E7F872 /* User.swift */; };
 		9627A60D20A4975D00AB2C96 /* AggregateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9627A60C20A4975D00AB2C96 /* AggregateViewController.swift */; };
 		966D9E5A1FD083D900AF258A /* VoteView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966D9E591FD083D900AF258A /* VoteView.storyboard */; };
 		966D9E5C1FD0840600AF258A /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D9E5B1FD0840600AF258A /* VoteViewController.swift */; };
@@ -59,7 +59,7 @@
 		960B47641FB9DF2A00E7F872 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		960B47671FB9EDBB00E7F872 /* RxSwiftConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftConst.swift; sourceTree = "<group>"; };
 		960B47691FB9F0C700E7F872 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		960B476B1FB9F50C00E7F872 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		960B476B1FB9F50C00E7F872 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9627A60C20A4975D00AB2C96 /* AggregateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregateViewController.swift; sourceTree = "<group>"; };
 		966D9E591FD083D900AF258A /* VoteView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VoteView.storyboard; sourceTree = "<group>"; };
 		966D9E5B1FD0840600AF258A /* VoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		960B47611FB9DE1B00E7F872 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				960B476B1FB9F50C00E7F872 /* Users.swift */,
+				960B476B1FB9F50C00E7F872 /* User.swift */,
 				96E8DD2120A73FBB0059B8BE /* Room.swift */,
 			);
 			path = Models;
@@ -646,7 +646,7 @@
 				9627A60D20A4975D00AB2C96 /* AggregateViewController.swift in Sources */,
 				966D9E5C1FD0840600AF258A /* VoteViewController.swift in Sources */,
 				9674A6AB1FC7FA9000F73CD8 /* BaseTabBarController.swift in Sources */,
-				960B476C1FB9F50C00E7F872 /* Users.swift in Sources */,
+				960B476C1FB9F50C00E7F872 /* User.swift in Sources */,
 				96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */,
 				9674A6AD1FC7FF0C00F73CD8 /* HomeViewController.swift in Sources */,
 				96FAA04F1FCDBB4900F0953C /* RoomViewController.swift in Sources */,
