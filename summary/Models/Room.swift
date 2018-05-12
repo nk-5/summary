@@ -5,6 +5,8 @@
 //  Copyright © 2018年 ArgentVGL. All rights reserved.
 //
 
+import Foundation
+
 public enum UserRoomState: Int {
     case invited
     case joined
@@ -22,7 +24,7 @@ public enum UserRoomState: Int {
     }
 }
 
-class Room {
+public class Room: NSObject {
     let id: String
     let users: [User?]
     let ranks: [Rank?]

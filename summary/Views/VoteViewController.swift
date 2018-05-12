@@ -13,14 +13,14 @@ class VoteViewController: UIViewController {
     @IBOutlet var targetsView: UIStackView!
     @IBOutlet var voteButton: UIButton!
 
-    var rank: Rank?
+    var rank: Room.Rank?
     let selectButtons = ReplaySubject<UIButton>.createUnbounded()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO: add error handling
 
-        guard let name = rank?.name else { return }
+        guard let name = rank?.id else { return }
         rankTitle.text = name
 
         createTargetSubView()
@@ -31,8 +31,8 @@ class VoteViewController: UIViewController {
     }
 
     func createTargetSubView() {
-        guard let targets = rank?.targets else { return }
-        Observable.from(targets).map({ target in let targetView: UIStackView = UIStackView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
+        guard let items = rank?.items else { return }
+        Observable.from(items).map({ target in let targetView: UIStackView = UIStackView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
             targetView.axis = .horizontal
             targetView.distribution = .fill
 

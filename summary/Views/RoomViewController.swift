@@ -15,7 +15,7 @@ struct SectionOfRoomRank {
 }
 
 extension SectionOfRoomRank: SectionModelType {
-    typealias Item = Rank
+    typealias Item = Room.Rank
 
     init(original _: SectionOfRoomRank, items: [Item]) {
         self.items = items
@@ -25,25 +25,25 @@ extension SectionOfRoomRank: SectionModelType {
 class RoomViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var rankView: UITableView!
 
-    var roomRanks: [Rank?] = []
+    var roomRanks: [Room.Rank?] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         rankView.delegate = self
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfRoomRank>(
-            configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: Rank) -> UITableViewCell in
+            configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: Room.Rank) -> UITableViewCell in
                 let cell = tv.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
-                cell.textLabel?.text = "\(item.name) 状態：\(item.state.description())"
+                cell.textLabel?.text = "\(item.id) 状態：\(item.state.description())"
                 return cell
         })
 
         // TODO: datasource get from Firestore
         let section = [
             SectionOfRoomRank(items: [
-                Rank(name: "test rank name", state: RankState.prepare, targets: ["test", "hoge", "fuga"]),
-                Rank(name: "hogehoge rank", state: RankState.open, targets: ["fuga", "hoge", "test"]),
-                Rank(name: "fugafuga rank", state: RankState.finished, targets: ["fuga", "test", "hoge"]),
+                Room.Rank(id: "test rank name", items: ["test", "hoge", "fuga"], state: RankState.prepare),
+                Room.Rank(id: "hogehoge rank", items: ["fuga", "hoge", "test"], state: RankState.open),
+                Room.Rank(id: "fugafuga rank", items: ["fuga", "test", "hoge"], state: RankState.finished),
             ]),
         ]
 
