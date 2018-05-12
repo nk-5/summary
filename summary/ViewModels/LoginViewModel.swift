@@ -9,21 +9,21 @@ import Firebase
 import RxSwift
 
 class LoginViewModel {
-    public func signUp(email: String, password: String, completeHandler: @escaping (User?, String?) -> Void) {
+    public func signUp(email: String, password: String, completeHandler: @escaping (Firebase.User?, String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { user, error in
             completeHandler(user, self.errorDescription(error: error))
             return
         }
     }
 
-    public func login(email: String, password: String, completeHandler: @escaping (User?, String?) -> Void) {
+    public func login(email: String, password: String, completeHandler: @escaping (Firebase.User?, String?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             completeHandler(user, self.errorDescription(error: error))
             return
         }
     }
 
-    public func anonymousLogin(completeHandler: @escaping (User?, String?) -> Void) {
+    public func anonymousLogin(completeHandler: @escaping (Firebase.User?, String?) -> Void) {
         Auth.auth().signInAnonymously(completion: { user, error in
             completeHandler(user, self.errorDescription(error: error))
             return

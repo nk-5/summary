@@ -34,7 +34,7 @@ struct Rank {
     //    var users: [User]
 }
 
-struct Room {
-    var name: String
-    var ranks: [Rank]
-}
+// struct Room {
+//    var name: String
+//    var ranks: [Rank]
+// }

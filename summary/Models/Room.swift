@@ -24,8 +24,8 @@ public enum UserRoomState: Int {
 
 class Room {
     let id: String
-    let users: [User]
-    let ranks: [Rank]
+    let users: [User?]
+    let ranks: [Rank?]
 
     struct User {
         let id: String
@@ -38,4 +38,9 @@ class Room {
         let state: RankState
     }
 
+    init(id: String, users: [User?], ranks: [Rank?]) {
+        self.id = id
+        self.users = users
+        self.ranks = ranks
+    }
 }
