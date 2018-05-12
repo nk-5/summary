@@ -41,8 +41,8 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         // TODO: datasource get from Firestore
         let section = [
             SectionOfRoomRank(items: [
-                Rank(name: "test rank name", state: RankState.ready, targets: ["test", "hoge", "fuga"]),
-                Rank(name: "hogehoge rank", state: RankState.voting, targets: ["fuga", "hoge", "test"]),
+                Rank(name: "test rank name", state: RankState.prepare, targets: ["test", "hoge", "fuga"]),
+                Rank(name: "hogehoge rank", state: RankState.open, targets: ["fuga", "hoge", "test"]),
                 Rank(name: "fugafuga rank", state: RankState.finished, targets: ["fuga", "test", "hoge"]),
             ]),
         ]
