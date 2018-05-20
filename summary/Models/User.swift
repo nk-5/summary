@@ -8,7 +8,7 @@
 import Foundation
 
 // TODO: add Organizations
-public class User: NSObject {
+public struct User {
     public enum Gender: Int {
         case male
         case female

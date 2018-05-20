@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Room: NSObject {
+public struct Room {
     public enum UserState: Int {
         case invited
         case joined
