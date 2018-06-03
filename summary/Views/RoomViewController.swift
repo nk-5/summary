@@ -31,6 +31,9 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         rankView.delegate = self
 
+//        Room.findById(id: "0")
+        Room.findRanksById(id: "0")
+
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfRoomRank>(
             configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: Room.Rank) -> UITableViewCell in
                 let cell = tv.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
@@ -41,9 +44,9 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         // TODO: datasource get from Firestore
         let section = [
             SectionOfRoomRank(items: [
-                Room.Rank(id: "test rank name", items: ["test", "hoge", "fuga"], state: RankState.prepare),
-                Room.Rank(id: "hogehoge rank", items: ["fuga", "hoge", "test"], state: RankState.open),
-                Room.Rank(id: "fugafuga rank", items: ["fuga", "test", "hoge"], state: RankState.finished),
+                Room.Rank(id: "test rank name", items: [Room.Rank.Item(name: "test", icon: "icon"), Room.Rank.Item(name: "hoge", icon: "icon"), Room.Rank.Item(name: "fuga", icon: "icon")], state: RankState.prepare),
+                Room.Rank(id: "hogehoge rank name", items: [Room.Rank.Item(name: "test", icon: "icon"), Room.Rank.Item(name: "hoge", icon: "icon"), Room.Rank.Item(name: "fuga", icon: "icon")], state: RankState.finished),
+                Room.Rank(id: "fugafuga rank name", items: [Room.Rank.Item(name: "test", icon: "icon"), Room.Rank.Item(name: "hoge", icon: "icon"), Room.Rank.Item(name: "fuga", icon: "icon")], state: RankState.open),
             ]),
         ]
 

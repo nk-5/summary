@@ -21,6 +21,11 @@
 		9674A6B11FC802D700F73CD8 /* RankForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9674A6AF1FC802D700F73CD8 /* RankForm.storyboard */; };
 		9674A6B31FC802FA00F73CD8 /* RankFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */; };
 		969E9DF71FD43E280030B8B2 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969E9DF61FD43E280030B8B2 /* Struct.swift */; };
+		96BFB52420C398E000679882 /* DocumentSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFB52320C398E000679882 /* DocumentSerializable.swift */; };
+		96BFB52920C43C7000679882 /* RoomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFB52820C43C7000679882 /* RoomTest.swift */; };
+		96BFB52A20C43F8000679882 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8DD2120A73FBB0059B8BE /* Room.swift */; };
+		96BFB52B20C43FAD00679882 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8DD2320A75E110059B8BE /* Rank.swift */; };
+		96BFB52C20C43FD100679882 /* DocumentSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFB52320C398E000679882 /* DocumentSerializable.swift */; };
 		96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */; };
 		96C79EC31FAF4DAC0005ED39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC11FAF4DAC0005ED39 /* Main.storyboard */; };
 		96C79EC51FAF4DAC0005ED39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC41FAF4DAC0005ED39 /* Assets.xcassets */; };
@@ -69,6 +74,8 @@
 		9674A6B01FC802D700F73CD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RankForm.storyboard; sourceTree = "<group>"; };
 		9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankFormViewController.swift; sourceTree = "<group>"; };
 		969E9DF61FD43E280030B8B2 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		96BFB52320C398E000679882 /* DocumentSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSerializable.swift; sourceTree = "<group>"; };
+		96BFB52820C43C7000679882 /* RoomTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTest.swift; sourceTree = "<group>"; };
 		96C79EBA1FAF4DAC0005ED39 /* summary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = summary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C79EBD1FAF4DAC0005ED39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C79EC21FAF4DAC0005ED39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +145,7 @@
 				960B476B1FB9F50C00E7F872 /* User.swift */,
 				96E8DD2120A73FBB0059B8BE /* Room.swift */,
 				96E8DD2320A75E110059B8BE /* Rank.swift */,
+				96BFB52320C398E000679882 /* DocumentSerializable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +191,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		96BFB52720C43C3E00679882 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96BFB52820C43C7000679882 /* RoomTest.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		96C79EB11FAF4DAC0005ED39 = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +242,7 @@
 		96C79ED11FAF4DAC0005ED39 /* summaryTests */ = {
 			isa = PBXGroup;
 			children = (
-				96F2D0AA1FC02B99008CBB84 /* Models */,
+				96BFB52720C43C3E00679882 /* Models */,
 				96F2D0AC1FC02BA5008CBB84 /* Views */,
 				96F2D0AB1FC02B9D008CBB84 /* ViewModels */,
 				96C79ED41FAF4DAC0005ED39 /* Info.plist */,
@@ -240,13 +257,6 @@
 				96C79EDF1FAF4DAC0005ED39 /* Info.plist */,
 			);
 			path = summaryUITests;
-			sourceTree = "<group>";
-		};
-		96F2D0AA1FC02B99008CBB84 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		96F2D0AB1FC02B9D008CBB84 /* ViewModels */ = {
@@ -656,6 +666,7 @@
 				96FAA04F1FCDBB4900F0953C /* RoomViewController.swift in Sources */,
 				9674A6B31FC802FA00F73CD8 /* RankFormViewController.swift in Sources */,
 				960B47681FB9EDBB00E7F872 /* RxSwiftConst.swift in Sources */,
+				96BFB52420C398E000679882 /* DocumentSerializable.swift in Sources */,
 				969E9DF71FD43E280030B8B2 /* Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +676,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F2D0AE1FC02BDC008CBB84 /* LoginViewModelTest.swift in Sources */,
+				96BFB52C20C43FD100679882 /* DocumentSerializable.swift in Sources */,
+				96BFB52920C43C7000679882 /* RoomTest.swift in Sources */,
+				96BFB52A20C43F8000679882 /* Room.swift in Sources */,
+				96BFB52B20C43FAD00679882 /* Rank.swift in Sources */,
 				96F2D0AF1FC02C6B008CBB84 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
