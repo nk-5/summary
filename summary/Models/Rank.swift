@@ -24,7 +24,7 @@ public enum RankState: Int {
     }
 }
 
-public class Rank: NSObject {
+public struct Rank {
     public enum UserState: Int {
         case invited
         case joined

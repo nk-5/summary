@@ -37,7 +37,7 @@ class VoteViewController: UIViewController {
             targetView.distribution = .fill
 
             let targetName = UILabel()
-            targetName.text = target
+            targetName.text = target.name
             targetView.addArrangedSubview(targetName)
 
             let targetSelectButton = UIButton()
