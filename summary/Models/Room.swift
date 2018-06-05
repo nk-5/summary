@@ -31,12 +31,12 @@ public struct Room {
     let users: [Room.User?]
     let ranks: [Room.Rank?]
 
-    struct User {
+    public struct User {
         let id: String
         let state: Room.UserState
     }
 
-    struct Rank {
+    public struct Rank {
         let id: String
         let items: [Item]
         let state: RankState
@@ -54,64 +54,67 @@ public struct Room {
         self.ranks = ranks
     }
 
-    public static func findUsersById(id: String) {
+    public static func findUsersById(id: String, completeHandler: @escaping ([Room.User?], Error?) -> Void) {
         let firestore = Firestore.firestore()
         let ref = firestore.collection("rooms").document(id).collection("users")
+        var userList: [Room.User] = [Room.User]()
 
         // getDocumentsは 対象のcollectionに紐づく全てのdocumentを取得
         ref.getDocuments(completion: { querySnapshot, error in
             if let error = error {
                 print("\(error)")
+                completeHandler(userList, error)
             } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID)")
-                }
-            }
-        })
-
-        // getDocument は対処のdocument idのfieldを取得する
-        // そのため、document idに紐付くcollectionは取得できない
-//        ref.getDocument(completion: { document, error in
-//            if let document = document {
-//                print(document.data())
-//            } else {
-//                print(error)
-//            }
-//        })
-    }
-
-    public static func findRanksById(id: String) {
-//    public static func findRanksById(id: String) -> Room.Rank {
-        let firestore = Firestore.firestore()
-        let ref = firestore.collection("rooms").document(id).collection("ranks")
-
-        // getDocumentsは 対象のcollectionに紐づく全てのdocumentを取得
-        ref.getDocuments(completion: { querySnapshot, error in
-            if let error = error {
-                print("\(error)")
-            } else {
-                var rankList: [Rank] = [Rank]()
                 for document in querySnapshot!.documents {
                     print("\(document.documentID)")
                     print("\(document.data())")
-                    guard let rank = Rank(id: document.documentID, dictionary: document.data()) else {
+                    guard let user = Room.User(id: document.documentID, dictionary: document.data()) else {
+                        continue
+                    }
+                    userList.append(user)
+                }
+                completeHandler(userList, nil)
+            }
+        })
+    }
+
+    public static func findRanksById(id: String, completeHandler: @escaping ([Room.Rank?], Error?) -> Void) {
+        let firestore = Firestore.firestore()
+        let ref = firestore.collection("rooms").document(id).collection("ranks")
+        var rankList: [Room.Rank] = [Room.Rank]()
+
+        // getDocumentsは 対象のcollectionに紐づく全てのdocumentを取得
+        ref.getDocuments(completion: { querySnapshot, error in
+            if let error = error {
+                print("\(error)")
+                completeHandler(rankList, error)
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID)")
+                    print("\(document.data())")
+                    guard let rank = Room.Rank(id: document.documentID, dictionary: document.data()) else {
                         continue
                     }
                     rankList.append(rank)
                 }
+                completeHandler(rankList, nil)
             }
         })
     }
+}
 
-//    func value<T>(forKey key: String) throws -> T {
-//        guard let value = data[key] as? T else { throw ModelDataError.typeCastFailed }
-//        return value
-//    }
+extension Room.User: DocumentSerializable {
+    init?(id: String, dictionary: [String: Any]) {
+        guard let stateRawvalue = dictionary["state"] as? Int,
+            let state = Room.UserState(rawValue: stateRawvalue) else {
+                return nil
+        }
+        self.init(id: id, state: state)
+    }
 }
 
 extension Room.Rank: DocumentSerializable {
     init?(id: String, dictionary: [String: Any]) {
-        // TODO: check stateRawValue not define RankState
         guard let items = dictionary["items"] as? [String: [String: Any]],
             let stateRawValue = dictionary["state"] as? Int,
             let state = RankState(rawValue: stateRawValue) else {
