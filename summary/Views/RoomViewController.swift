@@ -32,7 +32,7 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         rankView.delegate = self
 
 //        Room.findById(id: "0")
-        Room.findRanksById(id: "0")
+//        Room.findRanksById(id: "0")
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfRoomRank>(
             configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: Room.Rank) -> UITableViewCell in

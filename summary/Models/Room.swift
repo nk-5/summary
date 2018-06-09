@@ -5,9 +5,7 @@
 //  Copyright © 2018年 ArgentVGL. All rights reserved.
 //
 
-import FirebaseFirestore
 import Foundation
-import RxSwift
 
 public struct Room {
     public enum UserState: Int {
@@ -53,61 +51,13 @@ public struct Room {
         self.users = users
         self.ranks = ranks
     }
-
-    public static func findUsersById(id: String, completeHandler: @escaping ([Room.User?], Error?) -> Void) {
-        let firestore = Firestore.firestore()
-        let ref = firestore.collection("rooms").document(id).collection("users")
-        var userList: [Room.User] = [Room.User]()
-
-        // getDocumentsは 対象のcollectionに紐づく全てのdocumentを取得
-        ref.getDocuments(completion: { querySnapshot, error in
-            if let error = error {
-                print("\(error)")
-                completeHandler(userList, error)
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID)")
-                    print("\(document.data())")
-                    guard let user = Room.User(id: document.documentID, dictionary: document.data()) else {
-                        continue
-                    }
-                    userList.append(user)
-                }
-                completeHandler(userList, nil)
-            }
-        })
-    }
-
-    public static func findRanksById(id: String, completeHandler: @escaping ([Room.Rank?], Error?) -> Void) {
-        let firestore = Firestore.firestore()
-        let ref = firestore.collection("rooms").document(id).collection("ranks")
-        var rankList: [Room.Rank] = [Room.Rank]()
-
-        // getDocumentsは 対象のcollectionに紐づく全てのdocumentを取得
-        ref.getDocuments(completion: { querySnapshot, error in
-            if let error = error {
-                print("\(error)")
-                completeHandler(rankList, error)
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID)")
-                    print("\(document.data())")
-                    guard let rank = Room.Rank(id: document.documentID, dictionary: document.data()) else {
-                        continue
-                    }
-                    rankList.append(rank)
-                }
-                completeHandler(rankList, nil)
-            }
-        })
-    }
 }
 
 extension Room.User: DocumentSerializable {
     init?(id: String, dictionary: [String: Any]) {
         guard let stateRawvalue = dictionary["state"] as? Int,
             let state = Room.UserState(rawValue: stateRawvalue) else {
-                return nil
+            return nil
         }
         self.init(id: id, state: state)
     }

@@ -1,5 +1,5 @@
 //
-//  RoomTest.swift
+//  RoomViewModelTest.swift
 //  summaryTests
 //
 //  Created by 中川 慶悟 on 2018/06/04.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class RoomTest: XCTestCase {
+class RoomViewModelTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -19,8 +19,9 @@ class RoomTest: XCTestCase {
     }
     
     func testfindRanksById() {
+        let roomVM: RoomViewModel = RoomViewModel()
         let expectation = XCTestExpectation(description: "findRanksById")
-        Room.findRanksById(id: "0")
+        roomVM.findRanksById(id: "0", completeHandler: {_,_ in })
         XCTWaiter.wait(for: [expectation], timeout: 100)
     }
     
