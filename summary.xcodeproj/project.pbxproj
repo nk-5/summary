@@ -32,6 +32,7 @@
 		96C79EC31FAF4DAC0005ED39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC11FAF4DAC0005ED39 /* Main.storyboard */; };
 		96C79EC51FAF4DAC0005ED39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC41FAF4DAC0005ED39 /* Assets.xcassets */; };
 		96C79EC81FAF4DAC0005ED39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C79EC61FAF4DAC0005ED39 /* LaunchScreen.storyboard */; };
+		96D485D420CD7418009B866F /* RxSwiftConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B47671FB9EDBB00E7F872 /* RxSwiftConst.swift */; };
 		96E8DD2220A73FBB0059B8BE /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8DD2120A73FBB0059B8BE /* Room.swift */; };
 		96E8DD2420A75E110059B8BE /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8DD2320A75E110059B8BE /* Rank.swift */; };
 		96F2D0AE1FC02BDC008CBB84 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2D0AD1FC02BDC008CBB84 /* LoginViewModelTest.swift */; };
@@ -683,6 +684,7 @@
 				96F2D0AE1FC02BDC008CBB84 /* LoginViewModelTest.swift in Sources */,
 				96BFB52C20C43FD100679882 /* DocumentSerializable.swift in Sources */,
 				96BFB52920C43C7000679882 /* RoomViewModelTest.swift in Sources */,
+				96D485D420CD7418009B866F /* RxSwiftConst.swift in Sources */,
 				96BFB52A20C43F8000679882 /* Room.swift in Sources */,
 				96BFB52B20C43FAD00679882 /* Rank.swift in Sources */,
 				96BFAF3A20CC26430020AD78 /* RoomViewModel.swift in Sources */,

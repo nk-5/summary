@@ -26,13 +26,20 @@ class RoomViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var rankView: UITableView!
 
     var roomRanks: [Room.Rank?] = []
+    let roomVM: RoomViewModel = RoomViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         rankView.delegate = self
 
-//        Room.findById(id: "0")
-//        Room.findRanksById(id: "0")
+        roomVM.room.subscribe(onNext: { data in
+            print(data)
+        }, onError: { error in
+            print(error)
+        }, onCompleted: {
+            print("complete")
+        }).disposed(by: disposeBag)
+        roomVM.findRoomById(id: "0")
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfRoomRank>(
             configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: Room.Rank) -> UITableViewCell in

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import RxSwift
 
 class RoomViewModelTest: XCTestCase {
     
@@ -18,11 +19,26 @@ class RoomViewModelTest: XCTestCase {
         super.tearDown()
     }
     
-    func testfindRanksById() {
+//    func testfindRanksById() {
+//        let roomVM: RoomViewModel = RoomViewModel()
+//        let expectation = XCTestExpectation(description: "findRanksById")
+//        roomVM.findUsersById(id: "0")
+//        XCTWaiter.wait(for: [expectation], timeout: 100)
+//    }
+    
+    func testfindRoomById() {
         let roomVM: RoomViewModel = RoomViewModel()
-        let expectation = XCTestExpectation(description: "findRanksById")
-        roomVM.findRanksById(id: "0", completeHandler: {_,_ in })
-        XCTWaiter.wait(for: [expectation], timeout: 100)
+        let expectation = XCTestExpectation(description: "findRoomById")
+        roomVM.room.subscribe(onNext: { data in
+            print("keigo keigo")
+            print(data)
+        }, onError: { error in
+            print(error)
+        }, onCompleted: {
+            print("complete")
+        }).disposed(by: disposeBag)
+        roomVM.findRoomById(id: "0")
+        XCTWaiter.wait(for: [expectation], timeout: 5)
     }
     
 }

@@ -7,4 +7,4 @@
 
 import RxSwift
 
-let disposeBag: DisposeBag! = DisposeBag()
+public let disposeBag: DisposeBag! = DisposeBag()

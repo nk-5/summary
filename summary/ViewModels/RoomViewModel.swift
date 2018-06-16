@@ -9,21 +9,37 @@ import FirebaseFirestore
 import RxSwift
 
 class RoomViewModel {
-    public func findRoomById(id: String, completeHandler _: @escaping (Room?, Error?) -> Void) {
-        findRanksById(id: id, completeHandler: { _, _ in
+    private let roomSubject: PublishSubject = PublishSubject<Room>()
+    private let roomUsersSubject: PublishSubject = PublishSubject<[Room.User]>()
+    private let roomRanksSubject: PublishSubject = PublishSubject<[Room.Rank]>()
+
+    var room: Observable<Room> { return roomSubject }
+
+    public func findRoomById(id: String) {
+        let observable = Observable.combineLatest(roomUsersSubject, roomRanksSubject, resultSelector: {
+            users, ranks in
+            Room(id: id, users: users, ranks: ranks)
         })
+
+        observable.subscribe(onNext: { room in
+            self.roomSubject.onNext(room)
+        }).disposed(by: disposeBag)
+
+        findUsersById(id: id)
+        findRanksById(id: id)
     }
 
-    public func findUsersById(id: String, completeHandler: @escaping ([Room.User?], Error?) -> Void) {
+    private func findUsersById(id: String) {
         let firestore = Firestore.firestore()
         let ref = firestore.collection("rooms").document(id).collection("users")
         var userList: [Room.User] = [Room.User]()
 
         // getDocumentsは 対象のcollectionに紐づく全てのdocumentを取得
+//        ref.getDocuments(completion: { [roomUsersSubject] querySnapshot, error in
         ref.getDocuments(completion: { querySnapshot, error in
             if let error = error {
                 print("\(error)")
-                completeHandler(userList, error)
+                self.roomUsersSubject.onError(error)
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID)")
@@ -33,12 +49,13 @@ class RoomViewModel {
                     }
                     userList.append(user)
                 }
-                completeHandler(userList, nil)
+                self.roomUsersSubject.onNext(userList)
+                self.roomUsersSubject.onCompleted()
             }
         })
     }
 
-    public func findRanksById(id: String, completeHandler: @escaping ([Room.Rank?], Error?) -> Void) {
+    private func findRanksById(id: String) {
         let firestore = Firestore.firestore()
         let ref = firestore.collection("rooms").document(id).collection("ranks")
         var rankList: [Room.Rank] = [Room.Rank]()
@@ -47,7 +64,7 @@ class RoomViewModel {
         ref.getDocuments(completion: { querySnapshot, error in
             if let error = error {
                 print("\(error)")
-                completeHandler(rankList, error)
+                self.roomRanksSubject.onError(error)
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID)")
@@ -57,7 +74,8 @@ class RoomViewModel {
                     }
                     rankList.append(rank)
                 }
-                completeHandler(rankList, nil)
+                self.roomRanksSubject.onNext(rankList)
+                self.roomRanksSubject.onCompleted()
             }
         })
     }
