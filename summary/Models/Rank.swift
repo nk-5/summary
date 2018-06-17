@@ -44,7 +44,7 @@ public struct Rank {
 
     struct User {
         let state: Rank.UserState
-        let result: [String]
+        let result: [String: Int]
     }
 
     struct Item {
@@ -61,7 +61,9 @@ public struct Rank {
     let category: String?
     let items: [Item]
     let deadline: Timestamp
-    let icon: Data?
+    // TODO: cloud storage reference, type change reference??
+//    let icon: Data?
+    let icon: String?
     let permission: Int
     let minimumRequirement: Int
     let resultScope: Bool
@@ -70,7 +72,7 @@ public struct Rank {
     let type: Int
     let comments: [String: String?]
 
-    init(id: String, users: [User?], admin: String, category: String, items: [Item], deadline: Timestamp, icon: Data?, permission: Int, minimumRequirement: Int, resultScope: Bool, scope: Bool, state: RankState, type: Int, comments: [String: String?]) {
+    init(id: String, users: [User?], admin: String, category: String, items: [Item], deadline: Timestamp, icon: String?, permission: Int, minimumRequirement: Int, resultScope: Bool, scope: Bool, state: RankState, type: Int, comments: [String: String?]) {
         self.id = id
         self.users = users
         self.admin = admin
@@ -85,5 +87,29 @@ public struct Rank {
         self.state = state
         self.type = type
         self.comments = comments
+    }
+}
+
+extension Rank.User {
+    init?(dictionary: [String: Any]) {
+        guard let result = dictionary["result"] as? [String: Int],
+            let stateRawValue = dictionary["state"] as? Int,
+            let state = Rank.UserState(rawValue: stateRawValue) else {
+            return nil
+        }
+
+        self.init(state: state, result: result)
+    }
+}
+
+extension Rank.Item {
+    init?(dictionary: [String: Any]) {
+        guard let name = dictionary["name"] as? String,
+            let counts = dictionary["counts"] as? Int,
+            let icon = dictionary["icon"] as? String else {
+            return nil
+        }
+
+        self.init(name: name, counts: counts, icon: icon)
     }
 }

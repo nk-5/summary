@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: Rankのmodel組んで、Rank.item情報を表示
+
 class AggregateViewController: UIViewController {
     @IBOutlet var aggregateView: UIStackView!
     @IBOutlet var voteRate: UILabel!
