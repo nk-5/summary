@@ -72,15 +72,20 @@ class RoomViewController: UIViewController, UITableViewDelegate {
         let selectedRoomRank: Room.Rank = roomRanks[indexPath.row]
         let storyboard: UIStoryboard = UIStoryboard(name: "VoteView", bundle: nil)
 
-        if selectedRoomRank.state == .finished {
-            let avc: AggregateViewController = storyboard.instantiateViewController(withIdentifier: "aggregateView") as! AggregateViewController
-            show(avc, sender: nil)
-            return
+        switch selectedRoomRank.state {
+        case .prepare:
+            // TODO: 準備中画面いる??
+            break
+        case .open:
+            let vc: VoteViewController = storyboard.instantiateViewController(withIdentifier: "voteView") as! VoteViewController
+            vc.rank = roomRanks[indexPath.row]
+            show(vc, sender: nil)
+            break
+        case .finished:
+            let vc: AggregateViewController = storyboard.instantiateViewController(withIdentifier: "aggregateView") as! AggregateViewController
+            show(vc, sender: nil)
+            break
         }
-
-        let vvc: VoteViewController = storyboard.instantiateViewController(withIdentifier: "voteView") as! VoteViewController
-        vvc.rank = roomRanks[indexPath.row]
-        show(vvc, sender: nil)
     }
 
     @IBAction func didTouchCreateRank(_: Any) {
