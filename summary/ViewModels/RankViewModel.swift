@@ -29,6 +29,25 @@ class RankViewModel {
 //        findItemsById(id: id)
     }
     
+    private func findRankDataById(id: String) {
+        let firestore = Firestore.firestore()
+        let ref = firestore.collection("ranks").document(id)
+
+        ref.getDocument { document, error in
+                        if let error = error {
+                            print("\(error)")
+//                            self.rankUsersSubject.onError(error)
+                        } else {
+                            // TODO: get field data, implement extension for get field and nil check
+                            document?.documentID
+                            document?.data()
+            //                self.rankUsersSubject.onNext(userList)
+            //                self.rankUsersSubject.onCompleted()
+                        }
+            
+        }
+    }
+    
     private func findUsersById(id: String) {
         let firestore = Firestore.firestore()
         let ref = firestore.collection("ranks").document(id).collection("users")
