@@ -20,6 +20,7 @@
 		9674A6AD1FC7FF0C00F73CD8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6AC1FC7FF0C00F73CD8 /* HomeViewController.swift */; };
 		9674A6B11FC802D700F73CD8 /* RankForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9674A6AF1FC802D700F73CD8 /* RankForm.storyboard */; };
 		9674A6B31FC802FA00F73CD8 /* RankFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */; };
+		969400AE20D6B84E000BF8A7 /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969400AD20D6B84E000BF8A7 /* RankViewModel.swift */; };
 		969E9DF71FD43E280030B8B2 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969E9DF61FD43E280030B8B2 /* Struct.swift */; };
 		96BFAF3920CC255F0020AD78 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFAF3820CC255F0020AD78 /* RoomViewModel.swift */; };
 		96BFAF3A20CC26430020AD78 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFAF3820CC255F0020AD78 /* RoomViewModel.swift */; };
@@ -76,6 +77,7 @@
 		9674A6AC1FC7FF0C00F73CD8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9674A6B01FC802D700F73CD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RankForm.storyboard; sourceTree = "<group>"; };
 		9674A6B21FC802FA00F73CD8 /* RankFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankFormViewController.swift; sourceTree = "<group>"; };
+		969400AD20D6B84E000BF8A7 /* RankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewModel.swift; sourceTree = "<group>"; };
 		969E9DF61FD43E280030B8B2 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		96BFAF3820CC255F0020AD78 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		96BFB52320C398E000679882 /* DocumentSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSerializable.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				960B47691FB9F0C700E7F872 /* LoginViewModel.swift */,
 				96BFAF3820CC255F0020AD78 /* RoomViewModel.swift */,
+				969400AD20D6B84E000BF8A7 /* RankViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				96E8DD2420A75E110059B8BE /* Rank.swift in Sources */,
 				9674A6AB1FC7FA9000F73CD8 /* BaseTabBarController.swift in Sources */,
 				96BFAF3920CC255F0020AD78 /* RoomViewModel.swift in Sources */,
+				969400AE20D6B84E000BF8A7 /* RankViewModel.swift in Sources */,
 				960B476C1FB9F50C00E7F872 /* User.swift in Sources */,
 				96C79EBE1FAF4DAC0005ED39 /* AppDelegate.swift in Sources */,
 				9674A6AD1FC7FF0C00F73CD8 /* HomeViewController.swift in Sources */,
