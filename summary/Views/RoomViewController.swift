@@ -25,25 +25,27 @@ extension SectionOfRoomRank: SectionModelType {
 class RoomViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var rankView: UITableView!
 
-    var roomRanks: [Room.Rank?] = []
+    var roomRanks: [Room.Rank] = []
     let roomVM: RoomViewModel = RoomViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         rankView.delegate = self
 
-        roomVM.room.subscribe(onNext: { data in
-            print(data)
-        }, onError: { error in
-            print(error)
-        }, onCompleted: {
-            print("complete")
-        }).disposed(by: disposeBag)
-        roomVM.findRoomById(id: "0")
+        // get room data
+//        roomVM.room.subscribe(onNext: { data in
+//            print(data)
+//        }, onError: { error in
+//            print(error)
+//        }, onCompleted: {
+//            print("complete")
+//        }).disposed(by: disposeBag)
+//        roomVM.findRoomById(id: "0")
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfRoomRank>(
             configureCell: { (_: TableViewSectionedDataSource<SectionOfRoomRank>, tv: UITableView, _: IndexPath, item: Room.Rank) -> UITableViewCell in
                 let cell = tv.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
+                // TODO: state change image
                 cell.textLabel?.text = "\(item.id) 状態：\(item.state.description())"
                 return cell
         })
@@ -66,8 +68,17 @@ class RoomViewController: UIViewController, UITableViewDelegate {
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select rank. index path is \(indexPath.row)")
+
+        let selectedRoomRank: Room.Rank = roomRanks[indexPath.row]
         let storyboard: UIStoryboard = UIStoryboard(name: "VoteView", bundle: nil)
-        let vc: VoteViewController = storyboard.instantiateInitialViewController() as! VoteViewController
+
+        if selectedRoomRank.state == .finished {
+            let avc: AggregateViewController = storyboard.instantiateViewController(withIdentifier: "aggregateView") as! AggregateViewController
+            show(avc, sender: nil)
+            return
+        }
+
+        let vc: VoteViewController = storyboard.instantiateViewController(withIdentifier: "voteView") as! VoteViewController
         vc.rank = roomRanks[indexPath.row]
         show(vc, sender: nil)
     }

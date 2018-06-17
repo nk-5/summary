@@ -14,7 +14,7 @@
         <!--Vote View Controller-->
         <scene sceneID="MgE-7B-cjd">
             <objects>
-                <viewController id="fdR-8I-Edp" customClass="VoteViewController" customModule="summary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="voteView" id="fdR-8I-Edp" customClass="VoteViewController" customModule="summary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b0N-rC-08j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Aggregate View Controller-->
         <scene sceneID="0ob-NR-Jiu">
             <objects>
-                <viewController id="NbZ-JY-8Mx" customClass="AggregateViewController" customModule="summary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aggregateView" id="NbZ-JY-8Mx" customClass="AggregateViewController" customModule="summary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="As1-fG-l1a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
