@@ -13,9 +13,13 @@ class AggregateViewController: UIViewController {
     // TODO: 締め切りボタンタップ時はアラート出す
     @IBOutlet var closeBtn: UIButton!
 
+    var selectedItem: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO: get aggregate data
+
+        print(selectedItem)
     }
 
     @IBAction func didTouchCancel(_: Any) {

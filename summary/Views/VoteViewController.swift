@@ -15,6 +15,7 @@ class VoteViewController: UIViewController {
 
     var rank: Room.Rank?
     let selectButtons = ReplaySubject<UIButton>.createUnbounded()
+    var selectedItem: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,12 @@ class VoteViewController: UIViewController {
 
         createTargetSubView()
 
-        voteButton.rx.tap.subscribe({ _ in
+        voteButton.rx.tap.subscribe({ [weak self] _ in
             // TODO: vote button tapped show alert
+            let storyboard: UIStoryboard = UIStoryboard(name: "VoteView", bundle: nil)
+            let avc: AggregateViewController = storyboard.instantiateViewController(withIdentifier: "aggregateView") as! AggregateViewController
+            avc.selectedItem = self?.selectedItem
+            self?.show(avc, sender: nil)
         }).disposed(by: disposeBag)
     }
 
@@ -47,6 +52,7 @@ class VoteViewController: UIViewController {
             targetView.addArrangedSubview(targetSelectButton)
             targetSelectButton.rx.tap
                 .subscribe({ _ in
+                    self.selectedItem = target.name
                     self.changeSelectButtonTitle()
                     targetSelectButton.setTitle("selected", for: .normal)
 

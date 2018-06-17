@@ -46,9 +46,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgD-WJ-04o">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="vote"/>
-                                                <connections>
-                                                    <segue destination="NbZ-JY-8Mx" kind="show" id="F0Z-GW-Mqe"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
