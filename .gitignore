@@ -57,3 +57,5 @@ fastlane/test_output
 # bundler
 vendor/
 .bundle
+
+*/GoogleService-Info.plist
